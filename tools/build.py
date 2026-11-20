@@ -211,6 +211,18 @@ def fill(page, design):
                    else f'{html.escape(CFG["publisher"])} · In the app: Settings, About Amaviro, Contact Support.')
         page = must(page, f"<p>{html.escape(CFG['publisher'])}, [ADDRESS] · <a href=\"mailto:[SUPPORT EMAIL]\">[SUPPORT EMAIL]</a></p>",
                     f"<p>{contact}</p>", design)
+    discord = CFG.get("discordURL")
+    if discord:
+        # Footers: the Home page's Help column, and the link row on the other pages.
+        if design == "Main.dc.html":
+            page = re.sub(r'(>Contact</a>)', r'\1<a href="' + discord + '">Discord</a>', page, count=1)
+        else:
+            page = re.sub(r'(<footer.*?<span style="display:flex;flex-wrap:wrap;gap:24px">.*?)(</span>\s*</div>\s*</footer>)',
+                          lambda m: m.group(1) + f'<a href="{discord}">Discord</a>' + m.group(2), page, count=1, flags=re.S)
+        if design == "Support.dc.html":
+            page = must(page, '<span style="font-size:13px;color:#808781">Usually answered within',
+                        f'<a class="btn btn-outline" href="{discord}">Join the Discord</a>\n      '
+                        '<span style="font-size:13px;color:#808781">Usually answered within', design)
     left = re.findall(r"\[[A-Z][A-Z ]+\]", page)
     if left: sys.exit(f"{design}: placeholders left: {sorted(set(left))}")
     return page
