@@ -117,6 +117,27 @@ TOUR_JS = """<script>
 })();
 </script>"""
 
+NAV_JS = """<script>
+// Support and Beta share this page: the header marks Beta while you're at the beta section (from the Beta link, or
+// scrolled there), and Support elsewhere, so only one is ever highlighted.
+(() => {
+  const links = [...document.querySelectorAll('.links a')];
+  const support = links.find(a => a.getAttribute('href') === '/support/');
+  const beta = links.find(a => a.getAttribute('href') === '#beta' || a.getAttribute('href') === '/support/#beta');
+  const section = document.getElementById('beta');
+  if (!support || !beta || !section) return;
+  function mark(atBeta) {
+    for (const [a, on] of [[support, !atBeta], [beta, atBeta]]) {
+      a.classList.toggle('on', on);
+      if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    }
+  }
+  const io = new IntersectionObserver(es => { for (const e of es) mark(e.isIntersecting); }, { rootMargin: '-45% 0px -45% 0px' });
+  io.observe(section);
+  mark(location.hash === '#beta');
+})();
+</script>"""
+
 def method_source(script, name):
     """A method's text from the design's component class (braces counted)."""
     i = script.find(name + "() {")
@@ -210,6 +231,8 @@ def build(design, address):
         helmet = helmet.replace("</style>", TOUR_CSS + "</style>", 1)
         globe = method_source(re.search(r'data-dc-script[^>]*>(.*?)</script>', src, re.S).group(1), "startGlobe")
         script = TOUR_JS + "\n<script>\n// The letter globe, as in the app: drag to spin.\n(() => { const o = {\n" + globe + "\n}; o.startGlobe(); })();\n</script>"
+    if design == "Support.dc.html":
+        script = NAV_JS
     page = fix_links(fill(page, design))
     helmet = fix_links(helmet)
     url = f"https://{DOMAIN}{address}"
