@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Amaviro — Privacy and Terms</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/logo-32.png">
+<link rel="apple-touch-icon" href="assets/logo-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&amp;family=TASA+Orbiter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#080B08}
+a{color:#EDEBE5}a:hover{color:#FFFFFF}
+.lbl{font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#979D97}
+.card{background:#0E130F;border:1px solid #2C322D}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:10px;font-weight:600;font-size:16px;text-decoration:none}
+.btn-primary{background:#EDEBE5;color:#080B08}.btn-primary:hover{background:#FFFFFF;color:#080B08}
+.nav a{color:#979D97;text-decoration:none;font-size:15px}.nav a:hover{color:#EDEBE5}
+.toc a{display:block;color:#979D97;text-decoration:none;font-size:15px;padding:7px 0 7px 14px;border-left:1px solid #2C322D}.toc a:hover{color:#EDEBE5;border-left-color:#EDEBE5}
+.doc h2{margin:44px 0 12px;font-family:'Geist Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#979D97;font-weight:500}
+.doc p,.doc li{font-size:17px;line-height:1.65;color:#EDEBE5}
+.doc p{margin:0 0 14px}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(8,11,8,.8);-webkit-backdrop-filter:saturate(140%) blur(16px);backdrop-filter:saturate(140%) blur(16px);border-bottom:1px solid rgba(237,235,229,.09)}
+.hdr-in{box-sizing:border-box;max-width:1200px;min-height:64px;margin:0 auto;padding:10px clamp(16px,3vw,24px);display:flex;flex-wrap:wrap;align-items:center;column-gap:clamp(12px,3vw,32px);row-gap:4px}
+.brand{flex:none;display:flex;align-items:center;gap:10px;color:#EDEBE5;text-decoration:none}
+.brand-mark{display:block;width:32px;height:32px;border-radius:7px;outline:1px solid rgba(255,255,255,.14);outline-offset:-1px}
+.brand-word{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.links{flex:1 1 auto;display:flex;justify-content:center;gap:2px;min-width:0}
+.links a{color:#EDEBE5;opacity:.8;text-decoration:none;font-size:15px;font-weight:500;line-height:1;padding:10px 14px;border-radius:999px;white-space:nowrap;transition:background .15s,opacity .15s}
+.links a:hover{opacity:1;color:#FFFFFF;background:rgba(237,235,229,.08)}
+.links a.on{opacity:1;background:rgba(237,235,229,.13)}
+.hdr .cta{flex:none;min-height:40px;padding:0 18px;border-radius:999px;font-size:15px;white-space:nowrap}
+@media (max-width:720px){.links{order:3;flex:1 0 100%;justify-content:flex-start;margin:0 -10px;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}.links::-webkit-scrollbar{display:none}.links a{padding:9px 12px;font-size:14px}.hdr .cta{margin-left:auto;min-height:36px;padding:0 14px;font-size:14px}}
+@media (max-width:340px){.brand-word{display:none}}
+</style>
+</helmet>
+<div style="font-family:'TASA Orbiter',system-ui,sans-serif;color:#EDEBE5;background:#080B08;min-height:100%;position:relative;overflow-x:clip">
+
+  <!-- Band: the Search tab's colours -->
+  <div aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:440px;background-image:radial-gradient(rgba(8,11,8,.5) 1px,transparent 1.4px),linear-gradient(103deg,#3E98FF 0%,#52CD86 100%);background-size:6px 6px,100% 100%;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.7) 40%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.7) 40%,transparent 100%);opacity:.85"></div>
+
+  <header class="hdr">
+    <div class="hdr-in">
+      <a class="brand" href="Main.dc.html" aria-label="Amaviro home"><img class="brand-mark" src="assets/logo-128.png" alt="" width="32" height="32"><span class="brand-word">Amaviro</span></a>
+      <nav class="links" aria-label="Main">
+        <a href="Features.dc.html">Features</a>
+        <a href="Plus.dc.html">Plus</a>
+        <a href="Support.dc.html">Support</a>
+        <a href="Support.dc.html#beta">Beta</a>
+      </nav>
+      <a class="btn btn-primary cta" href="Main.dc.html#download">Get Amaviro</a>
+    </div>
+  </header>
+
+  <section style="position:relative;max-width:1200px;margin:0 auto;padding:60px 24px 30px;display:flex;flex-direction:column;gap:14px">
+    <span class="lbl" style="color:#EDEBE5">Legal</span>
+    <h1 style="margin:0;font-size:56px;line-height:1.05;letter-spacing:-.025em;font-weight:700">Privacy Policy</h1>
+    <p style="margin:0;font-size:17px">Last updated [DATE] · The same text as in the app, under Settings, About Amaviro.</p>
+  </section>
+
+  <!-- Contents beside the document; stacks on a phone -->
+  <div style="position:relative;max-width:1200px;margin:0 auto;padding:20px 24px 100px;display:flex;flex-wrap:wrap;gap:56px">
+    <nav class="toc" aria-label="On this page" style="flex:1 1 220px;max-width:260px;display:flex;flex-direction:column;gap:2px">
+      <span class="lbl" style="padding-bottom:10px">On this page</span>
+      <a href="#short">In short</a>
+      <a href="#keeps">What Amaviro keeps</a>
+      <a href="#sends">What it sends, and to whom</a>
+      <a href="#deleting">Deleting your information</a>
+      <a href="#terms">Terms of Use</a>
+      <a href="#acknowledgements">Acknowledgements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <article class="doc" style="flex:999 1 560px;min-width:0;max-width:760px">
+      <h2 id="short" style="margin-top:0">In short</h2>
+      <p>Amaviro plays the TV service you already pay for. It doesn't have accounts, adverts or analytics. Your provider logins stay on your devices. Amaviro doesn't sell or share anything about you.</p>
+
+      <h2 id="keeps">What Amaviro keeps, and where</h2>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px">
+        <sc-for list="{{keeps}}" as="k" hint-placeholder-count="4">
+          <div class="card" style="padding:16px 18px;display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between">
+            <span style="font-size:16px;font-weight:600;flex:1 1 260px">{{k.what}}</span>
+            <span style="font-size:15px;color:#979D97;flex:1 1 220px">{{k.where}}</span>
+          </div>
+        </sc-for>
+      </div>
+      <p>Nothing in this list is sent to the publisher of Amaviro.</p>
+
+      <h2 id="sends">What Amaviro sends, and to whom</h2>
+      <p>Your provider's servers, to sign in and play. ESPN's public feed, for fixtures and scores. Your own iCloud account, if you turn on sync or start a family. Apple, for purchases. No personal information goes anywhere else.</p>
+
+      <h2 id="deleting">Deleting your information</h2>
+      <p>Remove a provider in Settings, Your Providers, or use Sign Out on This Device to remove everything. Deleting the app deletes everything Amaviro stored on the device.</p>
+
+      <h2 id="terms">Terms of Use</h2>
+      <p>Amaviro is a video player. It doesn't include, sell or host any channels, films, series or streams. You add a subscription you already have, and you're responsible for having the right to watch what it gives you. Apple's standard licence agreement also applies.</p>
+      <p><a href="#terms">Read the full Terms of Use</a></p>
+
+      <h2 id="acknowledgements">Acknowledgements</h2>
+      <p>VLCKit by VideoLAN (LGPL 2.1), TASA Orbiter and Geist Mono (SIL Open Font Licence 1.1). Fixtures and scores from ESPN's public feeds; Amaviro isn't affiliated with ESPN.</p>
+
+      <h2 id="contact">Contact</h2>
+      <p>[PUBLISHER NAME], [ADDRESS] · <a href="mailto:[SUPPORT EMAIL]">[SUPPORT EMAIL]</a></p>
+    </article>
+  </div>
+
+  <footer class="nav" style="border-top:1px solid #2C322D">
+    <div style="max-width:1200px;margin:0 auto;padding:32px 24px;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center">
+      <span style="font-size:13px;color:#979D97">© 2026 [PUBLISHER NAME] · Amaviro doesn't include any channels or streams.</span>
+      <span style="display:flex;flex-wrap:wrap;gap:24px"><a href="Features.dc.html">Features</a><a href="Support.dc.html">Support</a><a href="Plus.dc.html">Plus</a></span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2500}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      keeps: [
+        { what: 'Provider addresses and usernames', where: 'On your device, only you' },
+        { what: 'Provider passwords', where: 'In the Keychain on your device' },
+        { what: 'Channels, the guide, films and series', where: 'On your device, from your provider' },
+        { what: 'Favourites and what you watched', where: 'On your device; iCloud if you sync' },
+        { what: 'Connection stats, 14 days', where: 'On your device, only you' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Amaviro — Features</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/logo-32.png">
+<link rel="apple-touch-icon" href="assets/logo-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&amp;family=TASA+Orbiter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#080B08}
+a{color:#EDEBE5}a:hover{color:#FFFFFF}
+.lbl{font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#979D97}
+.card{background:#0E130F;border:1px solid #2C322D}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:10px;font-weight:600;font-size:16px;text-decoration:none}
+.btn-primary{background:#EDEBE5;color:#080B08}.btn-primary:hover{background:#FFFFFF;color:#080B08}
+.btn-outline{border:1px solid #2C322D;color:#EDEBE5}.btn-outline:hover{border-color:#979D97;color:#FFFFFF}
+.nav a{color:#979D97;text-decoration:none;font-size:15px}.nav a:hover{color:#EDEBE5}.nav a.on{color:#EDEBE5}
+.chip{font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.06em;color:#979D97;border:1px solid #2C322D;padding:3px 8px;white-space:nowrap}
+.plus{font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;font-weight:600;background:#52CD86;color:#080B08;padding:3px 7px}
+.jump a{color:#979D97;text-decoration:none;font-size:15px;padding:8px 14px;border:1px solid #2C322D;border-radius:999px}.jump a:hover{color:#EDEBE5;border-color:#979D97}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(8,11,8,.8);-webkit-backdrop-filter:saturate(140%) blur(16px);backdrop-filter:saturate(140%) blur(16px);border-bottom:1px solid rgba(237,235,229,.09)}
+.hdr-in{box-sizing:border-box;max-width:1200px;min-height:64px;margin:0 auto;padding:10px clamp(16px,3vw,24px);display:flex;flex-wrap:wrap;align-items:center;column-gap:clamp(12px,3vw,32px);row-gap:4px}
+.brand{flex:none;display:flex;align-items:center;gap:10px;color:#EDEBE5;text-decoration:none}
+.brand-mark{display:block;width:32px;height:32px;border-radius:7px;outline:1px solid rgba(255,255,255,.14);outline-offset:-1px}
+.brand-word{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.links{flex:1 1 auto;display:flex;justify-content:center;gap:2px;min-width:0}
+.links a{color:#EDEBE5;opacity:.8;text-decoration:none;font-size:15px;font-weight:500;line-height:1;padding:10px 14px;border-radius:999px;white-space:nowrap;transition:background .15s,opacity .15s}
+.links a:hover{opacity:1;color:#FFFFFF;background:rgba(237,235,229,.08)}
+.links a.on{opacity:1;background:rgba(237,235,229,.13)}
+.hdr .cta{flex:none;min-height:40px;padding:0 18px;border-radius:999px;font-size:15px;white-space:nowrap}
+@media (max-width:720px){.links{order:3;flex:1 0 100%;justify-content:flex-start;margin:0 -10px;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}.links::-webkit-scrollbar{display:none}.links a{padding:9px 12px;font-size:14px}.hdr .cta{margin-left:auto;min-height:36px;padding:0 14px;font-size:14px}}
+@media (max-width:340px){.brand-word{display:none}}
+</style>
+</helmet>
+<div style="font-family:'TASA Orbiter',system-ui,sans-serif;color:#EDEBE5;background:#080B08;min-height:100%;position:relative;overflow-x:clip">
+
+  <!-- Band: the Live TV tab's colours -->
+  <div aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:520px;background-image:radial-gradient(rgba(8,11,8,.5) 1px,transparent 1.4px),linear-gradient(103deg,#3E98FF 0%,#A26CE5 50%,#F767C1 100%);background-size:6px 6px,100% 100%;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.7) 40%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.7) 40%,transparent 100%);opacity:.9"></div>
+
+  <header class="hdr">
+    <div class="hdr-in">
+      <a class="brand" href="Main.dc.html" aria-label="Amaviro home"><img class="brand-mark" src="assets/logo-128.png" alt="" width="32" height="32"><span class="brand-word">Amaviro</span></a>
+      <nav class="links" aria-label="Main">
+        <a class="on" aria-current="page" href="Features.dc.html">Features</a>
+        <a href="Plus.dc.html">Plus</a>
+        <a href="Support.dc.html">Support</a>
+        <a href="Support.dc.html#beta">Beta</a>
+      </nav>
+      <a class="btn btn-primary cta" href="Main.dc.html#download">Get Amaviro</a>
+    </div>
+  </header>
+
+  <section style="position:relative;max-width:1200px;margin:0 auto;padding:64px 24px 40px;display:flex;flex-direction:column;gap:20px">
+    <span class="lbl" style="color:#EDEBE5">Features</span>
+    <h1 style="margin:0;font-size:60px;line-height:1.04;letter-spacing:-.025em;font-weight:700;max-width:860px">Everything Amaviro does, and where.</h1>
+    <p style="margin:0;font-size:20px;line-height:1.5;max-width:680px">Each feature lists the devices it's on. Features marked Plus come with Amaviro Plus; everything else is free.</p>
+    <nav class="jump" aria-label="Sections" style="display:flex;flex-wrap:wrap;gap:10px;padding-top:10px">
+      <a href="#watching">Watching</a><a href="#sports">Sports</a><a href="#players">Players</a><a href="#reliability">When things go wrong</a><a href="#household">Your household</a><a href="#privacy">Privacy</a>
+    </nav>
+  </section>
+
+  <sc-for list="{{groups}}" as="g" hint-placeholder-count="6">
+    <section id="{{g.id}}" style="position:relative;max-width:1200px;margin:0 auto;padding:44px 24px;display:flex;flex-wrap:wrap;gap:40px;border-top:1px solid #1E231F">
+      <div style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:12px">
+        <span class="lbl" style="color:{{g.color}}">{{g.label}}</span>
+        <h2 style="margin:0;font-size:34px;line-height:1.12;letter-spacing:-.02em;font-weight:700">{{g.title}}</h2>
+      </div>
+      <div style="flex:3 1 640px;min-width:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px">
+        <sc-for list="{{g.items}}" as="f" hint-placeholder-count="4">
+          <div class="card" style="padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+              <span style="font-size:18px;font-weight:600">{{f.title}}</span>
+              <sc-if value="{{f.plus}}" hint-placeholder-val="{{false}}"><span class="plus">PLUS</span></sc-if>
+            </div>
+            <span style="font-size:15px;line-height:1.5;color:#979D97">{{f.text}}</span>
+            <span style="display:flex;flex-wrap:wrap;gap:6px;padding-top:4px">
+              <sc-for list="{{f.devices}}" as="d" hint-placeholder-count="3"><span class="chip">{{d}}</span></sc-for>
+            </span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </sc-for>
+
+  <section style="max-width:1200px;margin:0 auto;padding:60px 24px 100px">
+    <div class="card" style="padding:44px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:640px">
+        <h2 style="margin:0;font-size:34px;font-weight:700;letter-spacing:-.02em">Try it with your own subscription.</h2>
+        <p style="margin:0;font-size:17px;color:#979D97">Watching is free. Plus starts with seven days free on the Annual plan.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a class="btn btn-primary" href="Main.dc.html#download">Download on the App Store</a>
+        <a class="btn btn-outline" href="Plus.dc.html">See Plus</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="nav" style="border-top:1px solid #2C322D">
+    <div style="max-width:1200px;margin:0 auto;padding:32px 24px;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center">
+      <span style="font-size:13px;color:#979D97">© 2026 [PUBLISHER NAME] · Amaviro doesn't include any channels or streams.</span>
+      <span style="display:flex;flex-wrap:wrap;gap:24px"><a href="Support.dc.html">Support</a><a href="Legal.dc.html">Privacy</a><a href="Legal.dc.html#terms">Terms</a></span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const all = ['iPhone', 'iPad', 'Mac', 'Apple TV'], touch = ['iPhone', 'iPad', 'Mac'], big = ['iPad', 'Mac', 'Apple TV'];
+    return {
+      groups: [
+        { id: 'watching', label: 'Watching', color: '#3E98FF', title: 'Your channels, tidy and quick.', items: [
+          { title: 'Live TV with what’s on', text: 'Every channel with now and next from the guide, grouped the way your provider sends them, without the clutter in their names.', devices: all },
+          { title: 'Films and series', text: 'Posters, filters by genre, year and rating, and Continue Watching that picks up where you stopped.', devices: all },
+          { title: 'Search that forgives', text: 'Channels, the TV guide, films and series at once, or one at a time. “spiderman” finds Spider-Man.', devices: all },
+          { title: 'Favourites and Recently Watched', text: 'On Now, one press away, and the same on all your devices through iCloud.', devices: all }
+        ] },
+        { id: 'sports', label: 'Sports', color: '#52CD86', title: 'Every match, and the channel showing it.', items: [
+          { title: 'Your matches', text: 'Live and starting soon, your teams first, with the channel found from your guide.', devices: all },
+          { title: 'Where to watch', text: 'Every channel showing a match, best picture first, so you can pick another if one stutters.', devices: all },
+          { title: 'Live scores and match stats', text: 'A calm scores ticker, and possession, shots and more for the match you just watched.', devices: all },
+          { title: 'Kickoff alerts', text: 'A reminder before your team plays. Hide Scores keeps results a surprise.', devices: ['iPhone', 'iPad'] }
+        ] },
+        { id: 'players', label: 'Players', color: '#A26CE5', title: 'Plays the streams other players give up on.', items: [
+          { title: 'Apple’s player first', text: 'Picture in Picture, AirPlay and the controls you know, for every stream it can play.', devices: all },
+          { title: 'Compatibility Player', text: 'For the formats Apple’s player can’t open, chosen by itself, and remembered for each channel.', devices: all },
+          { title: 'Multiview', text: 'Two screens side by side, free. Three or four with Plus.', devices: big, plus: true },
+          { title: 'Audio and subtitles', text: 'Choose the language. Amaviro remembers it for the next stream that offers it.', devices: all }
+        ] },
+        { id: 'reliability', label: 'When things go wrong', color: '#FF4945', title: 'Calm, and clear about what to do.', items: [
+          { title: 'Fix It', text: 'What went wrong in plain English, who can fix it, one-tap fixes, and a full check of your connection, provider and streams.', devices: all, plus: true },
+          { title: 'Automatic server switching', text: 'If a server stops answering while you watch, Amaviro moves to your provider’s backup address and keeps playing.', devices: all, plus: true },
+          { title: 'Server health', text: 'Is your provider’s server answering, and how fast, at the top of Now.', devices: all },
+          { title: 'Widgets and history', text: 'Server health on your Home and Lock Screen, and two weeks of connection history.', devices: ['iPhone', 'iPad'], plus: true }
+        ] },
+        { id: 'household', label: 'Your household', color: '#F767C1', title: 'One app for everyone at home.', items: [
+          { title: 'Family', text: 'Share subscriptions, see whose device needs help, and set limits for children. Nobody sees what anyone watches.', devices: touch, plus: true },
+          { title: 'More than one provider', text: 'Add every subscription you have and switch between them from the top of any page.', devices: all, plus: true },
+          { title: 'Apple TV in a minute', text: 'Set it up from your iPhone. Your providers, favourites and progress follow you through iCloud.', devices: all },
+          { title: 'Backup TV guide', text: 'Fill in the channels your provider’s guide leaves empty.', devices: all, plus: true }
+        ] },
+        { id: 'privacy', label: 'Privacy', color: '#FBD509', title: 'No accounts. No adverts. No analytics.', items: [
+          { title: 'Logins stay with you', text: 'In the Keychain on your devices, and in iCloud Keychain, encrypted end to end, if you sync.', devices: all },
+          { title: 'Nothing to sign up for', text: 'No Amaviro account. Plus is bought through Apple, and Family uses your own iCloud.', devices: all }
+        ] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

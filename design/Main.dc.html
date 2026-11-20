@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Amaviro — Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/logo-32.png">
+<link rel="apple-touch-icon" href="assets/logo-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&amp;family=TASA+Orbiter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#080B08}
+a{color:#EDEBE5}a:hover{color:#FFFFFF}
+.lbl{font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#979D97}
+.card{background:#0E130F;border:1px solid #2C322D}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:10px;font-weight:600;font-size:16px;text-decoration:none}
+.btn-primary{background:#EDEBE5;color:#080B08}.btn-primary:hover{background:#FFFFFF;color:#080B08}
+.btn-outline{border:1px solid #2C322D;color:#EDEBE5}.btn-outline:hover{border-color:#979D97;color:#FFFFFF}
+.nav a{color:#979D97;text-decoration:none;font-size:15px}.nav a:hover{color:#EDEBE5}
+.dots{background-image:radial-gradient(rgba(8,11,8,.55) 1px,transparent 1.4px);background-size:6px 6px}
+@media (max-width:760px){.hero h1{font-size:44px !important}}
+/* Feature tour */
+.tour-tab{all:unset;box-sizing:border-box;display:flex;flex-direction:column;gap:4px;width:100%;padding:16px 18px;border:1px solid transparent;border-left:2px solid #2C322D;cursor:pointer;position:relative;color:#979D97}
+.tour-tab:hover{color:#EDEBE5}
+.tour-tab:focus-visible{outline:2px solid #EDEBE5;outline-offset:2px}
+.tour-tab.on{color:#EDEBE5;background:#0E130F;border-color:#2C322D;border-left-color:#EDEBE5}
+.tour-tab .tt{font-size:18px;font-weight:600}
+.tour-tab .td{font-size:14px;line-height:1.5;color:#979D97;display:none}
+.tour-tab.on .td{display:block}
+.tour-progress{position:absolute;left:-2px;top:0;width:2px;background:#52CD86;animation:tour-progress 7s linear both}
+@keyframes tour-progress{from{height:0}to{height:100%}}
+.tour-stage{min-height:600px}
+@media (max-width:900px){
+  .tour-tabs{flex-direction:row !important;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+  .tour-tab{flex:0 0 auto;width:auto;border-left:1px solid transparent;border-bottom:2px solid #2C322D;scroll-snap-align:start;padding:12px 16px}
+  .tour-tab.on{border-left-color:#2C322D;border-bottom-color:#EDEBE5}
+  .tour-tab .td{display:none !important}
+  .tour-progress{left:0;top:auto;bottom:-2px;height:2px;width:auto;animation-name:tour-progress-x}
+  .tour-stage{min-height:0}
+  .tour-caption{display:block !important}
+}
+@keyframes tour-progress-x{from{width:0}to{width:100%}}
+@keyframes t-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes t-pop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+@keyframes t-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes t-pulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes t-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes t-focus{0%,18%{transform:translateY(0)}24%,43%{transform:translateY(100%)}49%,68%{transform:translateY(200%)}74%,93%{transform:translateY(100%)}100%{transform:translateY(0)}}
+@keyframes t-shimmer{from{background-position:0% 50%}to{background-position:100% 50%}}
+@keyframes t-spin{to{transform:rotate(360deg)}}
+@keyframes t-hide{to{opacity:0;visibility:hidden}}
+@keyframes t-show{from{opacity:0}to{opacity:1}}
+@keyframes t-sheet{from{transform:translateY(105%)}to{transform:none}}
+@keyframes t-flash{0%{opacity:0}15%{opacity:1}70%{opacity:1}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.tour *{animation-duration:0s !important;animation-delay:0s !important;animation-iteration-count:1 !important}}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(8,11,8,.8);-webkit-backdrop-filter:saturate(140%) blur(16px);backdrop-filter:saturate(140%) blur(16px);border-bottom:1px solid rgba(237,235,229,.09)}
+.hdr-in{box-sizing:border-box;max-width:1200px;min-height:64px;margin:0 auto;padding:10px clamp(16px,3vw,24px);display:flex;flex-wrap:wrap;align-items:center;column-gap:clamp(12px,3vw,32px);row-gap:4px}
+.brand{flex:none;display:flex;align-items:center;gap:10px;color:#EDEBE5;text-decoration:none}
+.brand-mark{display:block;width:32px;height:32px;border-radius:7px;outline:1px solid rgba(255,255,255,.14);outline-offset:-1px}
+.brand-word{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.links{flex:1 1 auto;display:flex;justify-content:center;gap:2px;min-width:0}
+.links a{color:#EDEBE5;opacity:.8;text-decoration:none;font-size:15px;font-weight:500;line-height:1;padding:10px 14px;border-radius:999px;white-space:nowrap;transition:background .15s,opacity .15s}
+.links a:hover{opacity:1;color:#FFFFFF;background:rgba(237,235,229,.08)}
+.links a.on{opacity:1;background:rgba(237,235,229,.13)}
+.hdr .cta{flex:none;min-height:40px;padding:0 18px;border-radius:999px;font-size:15px;white-space:nowrap}
+@media (max-width:720px){.links{order:3;flex:1 0 100%;justify-content:flex-start;margin:0 -10px;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}.links::-webkit-scrollbar{display:none}.links a{padding:9px 12px;font-size:14px}.hdr .cta{margin-left:auto;min-height:36px;padding:0 14px;font-size:14px}}
+@media (max-width:340px){.brand-word{display:none}}
+.globe{position:relative;width:420px;max-width:100%;aspect-ratio:1/1;cursor:grab;touch-action:pan-y;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.globe.drag{cursor:grabbing}
+.globe canvas{display:block;width:100%;height:100%}
+</style>
+</helmet>
+<div style="font-family:'TASA Orbiter',system-ui,sans-serif;color:#EDEBE5;background:#080B08;min-height:100%;position:relative;overflow-x:clip">
+
+  <!-- The band: the Sports tab's colours, dotted, fading into the page -->
+  <div class="dots" aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:760px;background-color:transparent;background-image:radial-gradient(rgba(8,11,8,.5) 1px,transparent 1.4px),linear-gradient(103deg,#52CD86 0%,#3E98FF 50%,#A26CE5 100%);background-size:6px 6px,100% 100%;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.72) 40%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.72) 40%,transparent 100%);opacity:.9"></div>
+
+  <!-- Header -->
+  <header class="hdr">
+    <div class="hdr-in">
+      <a class="brand" href="Main.dc.html" aria-label="Amaviro home"><img class="brand-mark" src="assets/logo-128.png" alt="" width="32" height="32"><span class="brand-word">Amaviro</span></a>
+      <nav class="links" aria-label="Main">
+        <a href="Features.dc.html">Features</a>
+        <a href="Plus.dc.html">Plus</a>
+        <a href="Support.dc.html">Support</a>
+        <a href="Support.dc.html#beta">Beta</a>
+      </nav>
+      <a class="btn btn-primary cta" href="#download">Get Amaviro</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" style="position:relative;max-width:1200px;margin:0 auto;padding:56px 24px 40px;display:flex;flex-wrap:wrap;align-items:center;gap:48px">
+    <div style="flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:22px">
+      <span class="lbl" style="color:#EDEBE5">For iPhone, iPad, Mac and Apple TV</span>
+      <h1 style="margin:0;font-size:68px;line-height:1.02;letter-spacing:-.025em;font-weight:700">A player for the TV service you already pay for.</h1>
+      <p style="margin:0;font-size:21px;line-height:1.45;color:#EDEBE5;max-width:560px">Find the match fast, and keep watching when something breaks.</p>
+      <div id="download" style="display:flex;flex-wrap:wrap;gap:12px;padding-top:6px">
+        <a class="btn btn-primary" href="#">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
+          Download on the App Store
+        </a>
+        <a class="btn btn-outline" href="Support.dc.html#beta">Join the TestFlight Beta</a>
+      </div>
+      <p style="margin:0;font-size:14px;color:#979D97">No channels or streams included. Bring your own subscription.</p>
+    </div>
+    <!-- The letter globe: small As on a sphere, never any text on it -->
+    <div aria-hidden="true" style="flex:0 1 440px;min-width:0;display:flex;flex-direction:column;align-items:center;gap:10px">
+      <div id="globe" class="globe">
+        <canvas></canvas>
+      </div>
+      <span class="lbl" style="font-size:11px;color:#808781">Drag to spin</span>
+    </div>
+  </section>
+
+  <!-- Feature tour: pick a feature, or let it play (moves on every 7 seconds until a tab is chosen) -->
+  <section class="tour" aria-label="Amaviro in action" style="position:relative;max-width:1200px;margin:0 auto;padding:30px 24px 90px;display:flex;flex-direction:column;gap:22px">
+    <span class="lbl">See it in action</span>
+    <div style="display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start">
+      <div class="tour-tabs" role="tablist" aria-label="Features" style="flex:1 1 300px;max-width:100%;min-width:0;display:flex;flex-direction:column;gap:6px">
+        <sc-for list="{{tabs}}" as="t" hint-placeholder-count="6">
+          <button class="{{t.cls}}" role="tab" aria-selected="{{t.selected}}" onClick="{{t.pick}}">
+            <sc-if value="{{t.showProgress}}" hint-placeholder-val="{{false}}"><span class="tour-progress" aria-hidden="true"></span></sc-if>
+            <span class="tt">{{t.title}}</span>
+            <span class="td">{{t.text}}</span>
+          </button>
+        </sc-for>
+      </div>
+
+      <div class="tour-stage" role="tabpanel" aria-label="{{current.title}}" style="flex:2 1 520px;min-width:0;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px">
+
+        <!-- Now: the score changes, then the stats fill in -->
+        <sc-if value="{{show.now}}" hint-placeholder-val="{{true}}">
+          <div style="width:min(290px,78vw);aspect-ratio:9/19;box-sizing:border-box;border:9px solid #1A1E1B;border-radius:42px;background:#080B08;overflow:hidden;position:relative">
+            <div aria-hidden="true" style="position:absolute;inset:0 0 auto 0;height:34%;background-image:radial-gradient(rgba(8,11,8,.5) 1px,transparent 1.4px),linear-gradient(103deg,#52CD86,#3E98FF,#A26CE5);background-size:5px 5px,100% 100%;-webkit-mask-image:linear-gradient(180deg,#000,transparent);mask-image:linear-gradient(180deg,#000,transparent)"></div>
+            <div style="position:relative;padding:40px 14px 14px;display:flex;flex-direction:column;gap:10px">
+              <div style="font-family:'Geist Mono',monospace;font-size:10px;color:#979D97">Sunday 15 November</div>
+              <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(14,19,15,.85);width:max-content">
+                <span style="width:7px;height:7px;border-radius:50%;background:#52CD86;animation:t-pulse 1.6s ease-in-out infinite"></span>
+                <span style="font-size:11px;color:#979D97">Main Line</span>
+                <span style="font-family:'Geist Mono',monospace;font-size:11px">182 ms</span>
+              </div>
+              <div class="lbl" style="font-size:9px;color:#52CD86;padding-top:6px">Your matches</div>
+              <div class="card" style="padding:12px;display:flex;flex-direction:column;gap:7px;animation:t-rise .5s ease .2s both">
+                <div style="display:flex;align-items:center;gap:8px">
+                  <span style="font-family:'Geist Mono',monospace;font-size:9px;font-weight:600;background:#FF4945;color:#080B08;padding:2px 5px">LIVE 63'</span>
+                  <span style="position:relative;display:inline-block;width:44px;height:16px;font-family:'Geist Mono',monospace;font-size:13px;font-weight:600">
+                    <span style="position:absolute;left:0;top:0;animation:t-hide .25s ease 2.4s forwards">1 – 1</span>
+                    <span style="position:absolute;left:0;top:0;opacity:0;animation:t-show .3s ease 2.5s forwards">2 – 1</span>
+                  </span>
+                  <span style="font-family:'Geist Mono',monospace;font-size:9px;font-weight:600;color:#080B08;background:#52CD86;padding:2px 5px;opacity:0;animation:t-flash 2.4s ease 2.5s both">GOAL</span>
+                </div>
+                <div style="font-family:'Geist Mono',monospace;font-size:8px;letter-spacing:.1em;color:#979D97">PREMIER LEAGUE</div>
+                <div style="font-size:13px;font-weight:600">Harbour FC v Meridian United</div>
+                <div style="font-size:11px;display:flex;align-items:center;gap:6px"><span style="color:#52CD86">▶</span>NorthSport 1</div>
+              </div>
+              <div class="lbl" style="font-size:9px;color:#FF4945;padding-top:4px;animation:t-rise .5s ease .6s both">Match stats</div>
+              <div class="card" style="padding:12px;display:flex;flex-direction:column;gap:8px;animation:t-rise .5s ease .8s both">
+                <sc-for list="{{stats}}" as="s" hint-placeholder-count="3">
+                  <div style="display:flex;flex-direction:column;gap:4px">
+                    <div style="display:flex;justify-content:space-between;font-size:11px"><span style="font-family:'Geist Mono',monospace">{{s.home}}</span><span style="color:#979D97">{{s.label}}</span><span style="font-family:'Geist Mono',monospace">{{s.away}}</span></div>
+                    <div style="display:flex;gap:2px;height:3px">
+                      <span style="flex:{{s.h}};background:#EDEBE5;transform-origin:left;animation:t-grow .8s ease {{s.d}}s both"></span>
+                      <span style="flex:{{s.a}};background:#2C322D"></span>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- Sports: the ticker scrolls, then Where to Watch slides up -->
+        <sc-if value="{{show.sports}}" hint-placeholder-val="{{false}}">
+          <div style="width:min(290px,78vw);aspect-ratio:9/19;box-sizing:border-box;border:9px solid #1A1E1B;border-radius:42px;background:#080B08;overflow:hidden;position:relative">
+            <div aria-hidden="true" style="position:absolute;inset:0 0 auto 0;height:34%;background-image:radial-gradient(rgba(8,11,8,.5) 1px,transparent 1.4px),linear-gradient(103deg,#52CD86,#3E98FF,#A26CE5);background-size:5px 5px,100% 100%;-webkit-mask-image:linear-gradient(180deg,#000,transparent);mask-image:linear-gradient(180deg,#000,transparent)"></div>
+            <div style="position:relative;padding:40px 12px 12px;display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="display:flex;align-items:center;gap:5px;font-family:'Geist Mono',monospace;font-size:9px;font-weight:600;color:#FF4945"><span style="width:6px;height:6px;border-radius:50%;background:#FF4945;animation:t-pulse 1.4s infinite"></span>LIVE</span>
+                <div style="overflow:hidden;flex:1;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)">
+                  <div style="display:flex;gap:6px;width:max-content;animation:t-marquee 12s linear infinite">
+                    <sc-for list="{{ticker}}" as="c" hint-placeholder-count="6">
+                      <span style="font-size:10px;white-space:nowrap;padding:5px 9px;border-radius:999px;background:rgba(8,11,8,.75)">{{c}}</span>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+              <div class="lbl" style="font-size:9px;padding-top:6px">Today</div>
+              <sc-for list="{{fixtures}}" as="f" hint-placeholder-count="3">
+                <div class="card" style="padding:10px 12px;display:flex;flex-direction:column;gap:4px;animation:t-rise .45s ease {{f.d}}s both">
+                  <span style="font-family:'Geist Mono',monospace;font-size:10px;font-weight:600;color:{{f.color}}">{{f.when}}</span>
+                  <span style="font-size:12px;font-weight:600">{{f.name}}</span>
+                  <span style="font-family:'Geist Mono',monospace;font-size:8px;letter-spacing:.1em;color:#979D97">{{f.comp}}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="position:absolute;left:0;right:0;bottom:0;background:#141A15;border-top:1px solid #2C322D;border-radius:18px 18px 0 0;padding:14px 14px 18px;display:flex;flex-direction:column;gap:8px;animation:t-sheet .5s cubic-bezier(.2,.8,.2,1) 2.2s both">
+              <span style="width:34px;height:4px;border-radius:2px;background:#2C322D;align-self:center"></span>
+              <span style="font-size:13px;font-weight:600">Where to watch</span>
+              <sc-for list="{{sources}}" as="w" hint-placeholder-count="3">
+                <div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid #1E231F">
+                  <span style="font-size:12px;flex:1">{{w.name}}</span>
+                  <sc-if value="{{w.best}}" hint-placeholder-val="{{false}}"><span style="font-family:'Geist Mono',monospace;font-size:8px;font-weight:600;background:#52CD86;color:#080B08;padding:2px 4px">BEST</span></sc-if>
+                  <span style="font-family:'Geist Mono',monospace;font-size:9px;color:#979D97;border:1px solid #2C322D;padding:1px 5px">{{w.badge}}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- Live TV on Apple TV: focus moves down the channels -->
+        <sc-if value="{{show.live}}" hint-placeholder-val="{{false}}">
+          <div style="width:100%;max-width:680px;aspect-ratio:16/9;box-sizing:border-box;border:10px solid #1A1E1B;border-radius:16px;background:#080B08;overflow:hidden;position:relative">
+            <div aria-hidden="true" style="position:absolute;inset:0 0 auto 0;height:45%;background-image:radial-gradient(rgba(8,11,8,.5) 1px,transparent 1.4px),linear-gradient(103deg,#3E98FF,#A26CE5,#F767C1);background-size:5px 5px,100% 100%;-webkit-mask-image:linear-gradient(180deg,#000,transparent);mask-image:linear-gradient(180deg,#000,transparent)"></div>
+            <div style="position:relative;height:100%;box-sizing:border-box;padding:3.5% 5%;display:flex;flex-direction:column;gap:3%;font-size:clamp(8px,1.5vw,13px)">
+              <div style="display:flex;justify-content:center;gap:.6em">
+                <span style="padding:.4em 1em;border-radius:999px;background:rgba(14,19,15,.7)">Now</span>
+                <span style="padding:.4em 1em;border-radius:999px;background:rgba(14,19,15,.7)">Sports</span>
+                <span style="padding:.4em 1em;border-radius:999px;background:#EDEBE5;color:#080B08;font-weight:600">Live TV</span>
+                <span style="padding:.4em 1em;border-radius:999px;background:rgba(14,19,15,.7)">Watch</span>
+              </div>
+              <div style="display:flex;gap:.6em;font-size:.9em">
+                <span style="padding:.35em .9em;border-radius:999px;background:#52CD86;color:#080B08;font-weight:600">All</span>
+                <span style="padding:.35em .9em;border-radius:999px;background:rgba(14,19,15,.8)">UK Sports</span>
+                <span style="padding:.35em .9em;border-radius:999px;background:rgba(14,19,15,.8)">Entertainment</span>
+              </div>
+              <div style="position:relative;flex:1;display:flex;flex-direction:column">
+                <span aria-hidden="true" style="position:absolute;left:-1.5%;right:-1.5%;top:0;height:25%;border:2px solid #EDEBE5;border-radius:8px;background:rgba(237,235,229,.06);animation:t-focus 7s ease-in-out infinite"></span>
+                <sc-for list="{{channels}}" as="c" hint-placeholder-count="4">
+                  <div style="height:25%;display:flex;align-items:center;gap:1em;border-bottom:1px solid #1E231F">
+                    <span style="width:2.6em;height:2.6em;display:flex;align-items:center;justify-content:center;background:#141A15;font-family:'Geist Mono',monospace;font-size:.85em;font-weight:600;color:{{c.color}}">{{c.initials}}</span>
+                    <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:.25em">
+                      <span style="font-weight:600">{{c.name}}</span>
+                      <span style="color:#979D97;font-size:.85em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{c.now}}</span>
+                      <span style="display:block;width:40%;height:2px;background:#2C322D"><span style="display:block;height:100%;width:{{c.p}}%;background:#52CD86;transform-origin:left;animation:t-grow 1.2s ease .3s both"></span></span>
+                    </div>
+                    <span style="font-family:'Geist Mono',monospace;font-size:.8em;color:#979D97;border:1px solid #2C322D;padding:.15em .5em">{{c.badge}}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- Multiview on iPad: screens arrive one by one -->
+        <sc-if value="{{show.multi}}" hint-placeholder-val="{{false}}">
+          <div style="width:100%;max-width:600px;aspect-ratio:4/3;box-sizing:border-box;border:12px solid #1A1E1B;border-radius:24px;background:#080B08;overflow:hidden;position:relative">
+            <div style="height:100%;box-sizing:border-box;padding:2%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:2%">
+              <sc-for list="{{tiles}}" as="m" hint-placeholder-count="4">
+                <div style="position:relative;border-radius:6px;overflow:hidden;background-image:linear-gradient(120deg,{{m.c1}},{{m.c2}},{{m.c1}});background-size:300% 300%;animation:t-pop .5s ease {{m.d}}s both,t-shimmer 5s ease-in-out {{m.d}}s infinite alternate">
+                  <span style="position:absolute;left:6%;bottom:8%;display:flex;align-items:center;gap:6px;font-size:clamp(9px,1.3vw,12px)">
+                    <span style="font-family:'Geist Mono',monospace;font-size:.8em;font-weight:600;background:#FF4945;color:#080B08;padding:1px 4px">LIVE</span>
+                    <span style="font-weight:600;text-shadow:0 1px 6px rgba(0,0,0,.6)">{{m.name}}</span>
+                  </span>
+                  <sc-if value="{{m.plus}}" hint-placeholder-val="{{false}}"><span style="position:absolute;right:6%;top:8%;font-family:'Geist Mono',monospace;font-size:clamp(8px,1vw,10px);font-weight:600;background:#EDEBE5;color:#080B08;padding:1px 4px">PLUS</span></sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- Fix It: checks tick through, then the fix -->
+        <sc-if value="{{show.fix}}" hint-placeholder-val="{{false}}">
+          <div style="width:min(290px,78vw);aspect-ratio:9/19;box-sizing:border-box;border:9px solid #1A1E1B;border-radius:42px;background:#080B08;overflow:hidden;position:relative">
+            <div aria-hidden="true" style="position:absolute;inset:0 0 auto 0;height:30%;background-image:radial-gradient(rgba(8,11,8,.5) 1px,transparent 1.4px),linear-gradient(103deg,#FBD509,#52CD86,#3E98FF);background-size:5px 5px,100% 100%;-webkit-mask-image:linear-gradient(180deg,#000,transparent);mask-image:linear-gradient(180deg,#000,transparent)"></div>
+            <div style="position:relative;padding:44px 14px 14px;display:flex;flex-direction:column;gap:10px">
+              <span style="font-size:18px;font-weight:700">Fix a Problem</span>
+              <span style="font-size:11px;color:#979D97">Checking NorthSport 2…</span>
+              <div class="card" style="padding:4px 12px;display:flex;flex-direction:column">
+                <sc-for list="{{checks}}" as="k" hint-placeholder-count="4">
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid #1E231F">
+                    <span style="font-size:12px">{{k.label}}</span>
+                    <span style="position:relative;display:inline-flex;align-items:center;justify-content:flex-end;min-width:54px;height:16px">
+                      <span style="width:12px;height:12px;box-sizing:border-box;border-radius:50%;border:2px solid #2C322D;border-top-color:#EDEBE5;animation:t-spin .7s linear infinite,t-hide .15s ease {{k.d}}s forwards"></span>
+                      <span style="position:absolute;right:0;top:0;display:flex;align-items:center;gap:5px;opacity:0;animation:t-show .25s ease {{k.d}}s forwards;font-family:'Geist Mono',monospace;font-size:10px;color:{{k.color}}">
+                        {{k.result}}
+                        <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="{{k.icon}}"></path></svg>
+                      </span>
+                    </span>
+                  </div>
+                </sc-for>
+              </div>
+              <div class="card" style="padding:12px;display:flex;flex-direction:column;gap:8px;border-color:#FF4945;animation:t-rise .5s ease 3.3s both">
+                <span class="lbl" style="font-size:9px;color:#FF4945">What's wrong</span>
+                <span style="font-size:12px;line-height:1.45">Apple's player can't open this stream's format. Your provider and connection are fine.</span>
+                <span style="align-self:stretch;text-align:center;font-size:12px;font-weight:600;background:#EDEBE5;color:#080B08;border-radius:8px;padding:8px">Use Compatibility Player</span>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- Apple TV setup: the code types in, then it's connected -->
+        <sc-if value="{{show.tv}}" hint-placeholder-val="{{false}}">
+          <div style="width:100%;max-width:680px;aspect-ratio:16/9;box-sizing:border-box;border:10px solid #1A1E1B;border-radius:16px;background:#080B08;overflow:hidden;position:relative">
+            <div aria-hidden="true" style="position:absolute;inset:0 0 auto 0;height:50%;background-image:radial-gradient(rgba(8,11,8,.5) 1px,transparent 1.4px),linear-gradient(103deg,#FBD509,#52CD86,#3E98FF);background-size:5px 5px,100% 100%;-webkit-mask-image:linear-gradient(180deg,#000,transparent);mask-image:linear-gradient(180deg,#000,transparent)"></div>
+            <div style="position:relative;height:100%;box-sizing:border-box;padding:6% 8%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5%;text-align:center;font-size:clamp(8px,1.5vw,14px)">
+              <span class="lbl" style="font-size:.85em;color:#EDEBE5">Set up Apple TV</span>
+              <span style="font-size:1.6em;font-weight:700">Type this code on your iPhone</span>
+              <span style="color:#979D97">Settings, Your Providers, Set Up Apple TV</span>
+              <div style="display:flex;gap:.6em">
+                <sc-for list="{{code}}" as="g" hint-placeholder-count="6">
+                  <span style="width:2.6em;height:3.2em;display:flex;align-items:center;justify-content:center;border:1px solid #2C322D;background:#0E130F;font-family:'Geist Mono',monospace;font-size:1.4em;font-weight:600"><span style="opacity:0;animation:t-show .2s ease {{g.d}}s forwards">{{g.v}}</span></span>
+                </sc-for>
+              </div>
+              <span style="display:flex;align-items:center;gap:.5em;color:#52CD86;font-weight:600;animation:t-rise .5s ease 3.2s both">
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                Connected · Main Line and Line 2 added
+              </span>
+            </div>
+          </div>
+        </sc-if>
+
+        <p class="tour-caption" style="display:none;margin:0;text-align:center;font-size:15px;line-height:1.5;color:#979D97;max-width:520px">{{current.text}}</p>
+        <span class="lbl" style="font-size:11px">{{current.device}}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sports first -->
+  <section style="max-width:1200px;margin:0 auto;padding:40px 24px 90px;display:flex;flex-wrap:wrap;gap:48px">
+    <div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px">
+      <span class="lbl" style="color:#52CD86">Sports first</span>
+      <h2 style="margin:0;font-size:44px;line-height:1.08;letter-spacing:-.02em;font-weight:700">Every match, and the channel showing it.</h2>
+      <p style="margin:0;font-size:18px;line-height:1.55;color:#979D97">Pick your sports, leagues and teams once. Amaviro reads your provider's guide and finds the channel for each match, so one press plays it.</p>
+    </div>
+    <div style="flex:1 1 560px;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
+      <sc-for list="{{sports}}" as="s" hint-placeholder-count="4">
+        <div class="card" style="padding:22px;display:flex;flex-direction:column;gap:8px;min-height:150px">
+          <div style="font-size:18px;font-weight:600">{{s.title}}</div>
+          <div style="font-size:15px;line-height:1.5;color:#979D97">{{s.text}}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- Feature grid -->
+  <section style="max-width:1200px;margin:0 auto;padding:40px 24px 90px;display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span class="lbl">Built for the way IPTV really behaves</span>
+        <h2 style="margin:0;font-size:44px;line-height:1.08;letter-spacing:-.02em;font-weight:700">Calm when things go wrong.</h2>
+      </div>
+      <a class="btn btn-outline" href="Features.dc.html">See every feature</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px">
+      <sc-for list="{{features}}" as="f" hint-placeholder-count="8">
+        <div class="card" style="padding:24px;display:flex;flex-direction:column;gap:12px">
+          <span aria-hidden="true" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:{{f.tint}};color:{{f.color}};border-radius:9px;font-family:'Geist Mono',monospace;font-size:13px;font-weight:600">{{f.mark}}</span>
+          <div style="font-size:18px;font-weight:600">{{f.title}}</div>
+          <div style="font-size:15px;line-height:1.5;color:#979D97">{{f.text}}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section style="max-width:1200px;margin:0 auto;padding:30px 24px 90px">
+    <div class="card" style="padding:48px;display:flex;flex-wrap:wrap;gap:40px;align-items:center">
+      <div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:16px">
+        <span class="lbl">Privacy</span>
+        <h2 style="margin:0;font-size:40px;line-height:1.1;letter-spacing:-.02em;font-weight:700">No accounts. No adverts. No analytics.</h2>
+        <p style="margin:0;font-size:17px;line-height:1.55;color:#979D97">Your provider logins stay on your devices, in the Keychain. Sync between your own devices goes through iCloud Keychain, encrypted end to end. Nobody at Amaviro can see what you watch.</p>
+        <a href="Legal.dc.html" style="font-size:16px;color:#EDEBE5">Read the privacy policy</a>
+      </div>
+      <div style="flex:1 1 360px;min-width:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px">
+        <div style="border:1px solid #2C322D;padding:20px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'Geist Mono',monospace;font-size:30px;font-weight:600">0</span><span style="font-size:13px;color:#979D97">accounts to make</span></div>
+        <div style="border:1px solid #2C322D;padding:20px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'Geist Mono',monospace;font-size:30px;font-weight:600">0</span><span style="font-size:13px;color:#979D97">adverts</span></div>
+        <div style="border:1px solid #2C322D;padding:20px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'Geist Mono',monospace;font-size:30px;font-weight:600">0</span><span style="font-size:13px;color:#979D97">trackers</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plus teaser -->
+  <section style="max-width:1200px;margin:0 auto;padding:30px 24px 90px;display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:720px">
+      <span class="lbl">Amaviro Plus</span>
+      <h2 style="margin:0;font-size:44px;line-height:1.08;letter-spacing:-.02em;font-weight:700">Watching is free. Plus is for the whole household.</h2>
+      <p style="margin:0;font-size:18px;line-height:1.55;color:#979D97">Live TV, the guide, films, series, sports and search are free. Plus adds Fix It, more than one provider, Multiview with four screens, Family and more.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px">
+      <div class="card" style="padding:26px;display:flex;flex-direction:column;gap:8px">
+        <span class="lbl">Monthly</span>
+        <span style="font-size:34px;font-weight:700">£2.99<span style="font-size:16px;font-weight:400;color:#979D97"> a month</span></span>
+        <span style="font-size:14px;color:#979D97">£35.88 over a year</span>
+      </div>
+      <div class="card" style="padding:26px;display:flex;flex-direction:column;gap:8px;border-color:#EDEBE5">
+        <span style="display:flex;align-items:center;gap:10px"><span class="lbl">Annual</span><span style="font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;background:#52CD86;color:#080B08;padding:3px 7px">SAVE 44%</span></span>
+        <span style="font-size:34px;font-weight:700">£19.99<span style="font-size:16px;font-weight:400;color:#979D97"> a year</span></span>
+        <span style="font-size:14px;color:#52CD86">£1.67 a month · 7 days free</span>
+      </div>
+      <div class="card" style="padding:26px;display:flex;flex-direction:column;gap:8px">
+        <span class="lbl">Lifetime</span>
+        <span style="font-size:34px;font-weight:700">£49.99<span style="font-size:16px;font-weight:400;color:#979D97"> once</span></span>
+        <span style="font-size:14px;color:#979D97">Every Plus feature, for good. Beta testers: £39.99 with your founders’ code.</span>
+      </div>
+    </div>
+    <a class="btn btn-primary" href="Plus.dc.html" style="align-self:flex-start">Compare Free and Plus</a>
+  </section>
+
+  <!-- FAQ -->
+  <section style="max-width:1200px;margin:0 auto;padding:30px 24px 100px;display:flex;flex-wrap:wrap;gap:48px">
+    <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:14px">
+      <span class="lbl">Questions</span>
+      <h2 style="margin:0;font-size:40px;line-height:1.1;letter-spacing:-.02em;font-weight:700">Before you start</h2>
+      <a href="Support.dc.html" style="font-size:16px">More answers in Support</a>
+    </div>
+    <div style="flex:2 1 560px;min-width:0;display:flex;flex-direction:column">
+      <sc-for list="{{faq}}" as="q" hint-placeholder-count="4">
+        <details style="border-top:1px solid #2C322D;padding:22px 0">
+          <summary style="cursor:pointer;font-size:19px;font-weight:600;list-style-position:outside">{{q.q}}</summary>
+          <p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#979D97">{{q.a}}</p>
+        </details>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="border-top:1px solid #2C322D">
+    <div class="nav" style="max-width:1200px;margin:0 auto;padding:48px 24px;display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between">
+      <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:14px;max-width:420px">
+        <span style="font-size:20px;font-weight:700">Amaviro</span>
+        <p style="margin:0;font-size:14px;line-height:1.6;color:#979D97">Amaviro is a video player. It doesn't include, sell or host any channels, films, series or streams, and isn't connected with any TV provider.</p>
+        <p style="margin:0;font-size:13px;color:#979D97">© 2026 [PUBLISHER NAME]</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:56px">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span class="lbl">Amaviro</span>
+          <a href="Features.dc.html">Features</a><a href="Plus.dc.html">Amaviro Plus</a><a href="Support.dc.html#beta">TestFlight Beta</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span class="lbl">Help</span>
+          <a href="Support.dc.html">Support</a><a href="Support.dc.html#setup">Setting up</a><a href="mailto:[SUPPORT EMAIL]">Contact</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span class="lbl">Legal</span>
+          <a href="Legal.dc.html">Privacy Policy</a><a href="Legal.dc.html#terms">Terms of Use</a><a href="Legal.dc.html#acknowledgements">Acknowledgements</a>
+        </div>
+      </div>
+    </div>
+    <p style="max-width:1200px;margin:0 auto;padding:0 24px 40px;font-size:12px;line-height:1.6;color:#808781">Apple, Apple TV, iPhone, iPad and Mac are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc.</p>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5200}}'>
+class Component extends DCLogic {
+  // The letter globe, drawn as in the app (LetterGlobe.swift): 900 small As on a Fibonacci sphere, with perspective,
+  // the back half fading to a haze, colours drifting slowly round the wheel, one turn every 40 seconds.
+  // Drag to spin it (it coasts, then slows); letters part round the pointer.
+  // One canvas; each of the 30 colours of A is drawn once as a small image, so a frame is ~900 image copies.
+  // It only runs while on screen and the tab is in front; with Reduce Motion it doesn't turn by itself.
+  startGlobe() {
+    const HUES = 30, TURN = 40, CYCLE = 60;
+    const still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const noise = (i, salt) => { const v = Math.sin(i * 12.9898 + salt) * 43758.5453; return v - Math.floor(v); };
+    const makePoints = (n) => {
+      const ga = Math.PI * (3 - Math.sqrt(5)), P = new Float64Array(n * 5);
+      for (let i = 0; i < n; i++) {
+        const y = 1 - (i / (n - 1)) * 2, r = Math.sqrt(Math.max(0, 1 - y * y)), th = ga * i;
+        P.set([Math.cos(th) * r, y, Math.sin(th) * r, (y + 1) / 2, 0.8 + noise(i, 1) * 0.6], i * 5);
+      }
+      return P;
+    };
+    const hsv = (h, s, v) => {
+      const i = Math.floor(h * 6), f = h * 6 - i, p = v * (1 - s), q = v * (1 - f * s), t = v * (1 - (1 - f) * s);
+      const c = [[v, t, p], [q, v, p], [p, v, t], [p, q, v], [t, p, v], [v, p, q]][i % 6];
+      return 'rgb(' + c.map((x) => Math.round(x * 255)).join(',') + ')';
+    };
+    const sprites = [];
+    const drawSprites = () => {
+      for (let k = 0; k < HUES; k++) {
+        const c = sprites[k] || (sprites[k] = document.createElement('canvas')); c.width = c.height = 64;
+        const x = c.getContext('2d'); x.clearRect(0, 0, 64, 64);
+        x.font = "700 52px 'TASA Orbiter', system-ui, sans-serif"; x.textAlign = 'center'; x.textBaseline = 'middle';
+        x.fillStyle = hsv(k / HUES, 0.62, 0.95); x.fillText('A', 32, 35);
+      }
+    };
+    drawSprites();
+    if (document.fonts && document.fonts.load) document.fonts.load("700 52px 'TASA Orbiter'").then(drawSprites, () => {});
+
+    const g = this.g = { spin: 0, tilt: 0, vel: 0, rel: 0, spinRel: 0, drag: null, touch: null, hover: false, partT: -9,
+                         lastX: 0, lastT: 0, t: 0, prev: 0, el: null, cv: null, ctx: null, on: true, raf: 0, io: null, n: 0, P: null };
+    const now = () => performance.now() / 1000;
+    const spinAt = (t) => (g.drag || !g.vel) ? g.spin : g.spinRel + g.vel * 1.1 * (1 - Math.exp(-Math.max(0, t - g.rel) / 1.1));
+    const bind = (el) => {
+      g.el = el; g.cv = el.querySelector('canvas'); g.ctx = g.cv.getContext('2d');
+      const local = (e) => { const b = el.getBoundingClientRect(); return [e.clientX - b.left, e.clientY - b.top]; };
+      el.addEventListener('pointerdown', (e) => {
+        const t = now(); g.spin = spinAt(t);
+        g.drag = { x: e.clientX, y: e.clientY, spin: g.spin, tilt: g.tilt, id: e.pointerId };
+        g.vel = 0; g.lastX = e.clientX; g.lastT = t; g.touch = local(e);
+        try { el.setPointerCapture(e.pointerId); } catch (_) {}
+        el.classList.add('drag');
+      });
+      el.addEventListener('pointermove', (e) => {
+        if (e.pointerType === 'mouse') { g.touch = local(e); g.hover = true; }
+        if (!g.drag || e.pointerId !== g.drag.id) return;
+        const r = el.clientWidth * 0.4, t = now();
+        g.spin = g.drag.spin + (e.clientX - g.drag.x) / r;
+        g.tilt = Math.min(0.6, Math.max(-0.6, g.drag.tilt - (e.clientY - g.drag.y) / r * 0.5));
+        g.touch = local(e);
+        const dt = t - g.lastT;
+        if (dt > 0.008) { g.vel = g.vel * 0.4 + 0.6 * (e.clientX - g.lastX) / r / dt; g.lastX = e.clientX; g.lastT = t; }
+      });
+      const end = () => {
+        if (!g.drag) return;
+        const t = now();
+        if (t - g.lastT > 0.1) g.vel = 0;                     // held still before letting go: no coast
+        g.vel = Math.max(-12, Math.min(12, g.vel));
+        g.drag = null; g.rel = t; g.spinRel = g.spin; g.partT = t;
+        el.classList.remove('drag');
+      };
+      el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
+      el.addEventListener('lostpointercapture', end);
+      el.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse' && !g.drag) { g.hover = false; g.partT = now(); } });
+      if ('IntersectionObserver' in window) {
+        if (g.io) g.io.disconnect();
+        g.io = new IntersectionObserver((es) => { g.on = es[0].isIntersecting; if (g.on) wake(); });
+        g.io.observe(el);
+      }
+    };
+    let order = null, X, Y, Z, S, H;
+    const frame = () => {
+      g.raf = 0;
+      const el = document.getElementById('globe');
+      if (!el) { g.raf = requestAnimationFrame(frame); return; }
+      if (el !== g.el) bind(el);
+      if (!g.on || document.hidden) { g.prev = 0; return; }   // paused; wake() restarts it
+      const tn = now();
+      if (!still && g.prev) g.t += Math.min(0.1, tn - g.prev); // own clock, so a pause doesn't jump
+      g.prev = tn;
+      // Canvas at the element's size and the screen's sharpness (at most 2x).
+      const w = el.clientWidth, dpr = Math.min(2, window.devicePixelRatio || 1), px = Math.round(w * dpr);
+      if (g.cv.width !== px) { g.cv.width = g.cv.height = px; }
+      const n = w < 300 ? 600 : 900;
+      if (g.n !== n) { g.n = n; g.P = makePoints(n); order = new Uint16Array(n); X = new Float32Array(n); Y = new Float32Array(n); Z = new Float32Array(n); S = new Float32Array(n); H = new Uint8Array(n); }
+      const ctx = g.ctx; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, w);
+      const R = w * 0.5, c = w / 2, P = g.P;          // a little larger than the app's, to fill the hero
+      const rot = 0.5 + g.t * 2 * Math.PI / TURN + spinAt(tn), tilt = -0.22 + g.tilt;
+      const cr = Math.cos(rot), sr = Math.sin(rot), ct = Math.cos(tilt), st = Math.sin(tilt);
+      const part = (g.drag || g.hover) ? 1 : Math.exp(-Math.max(0, tn - g.partT) / 0.35);
+      const reach = R * 0.55, push = g.touch ? part * R * 0.35 : 0;
+      const dot = Math.max(3, w * 1.25 / Math.sqrt(n) * 0.72), shift = (g.t / CYCLE) % 1;
+      for (let i = 0; i < n; i++) {
+        const o = i * 5, x = P[o] * cr + P[o + 2] * sr, z0 = -P[o] * sr + P[o + 2] * cr;
+        const y = P[o + 1] * ct - z0 * st, z = P[o + 1] * st + z0 * ct, pr = 1.15 / (1.6 - z * 0.35);
+        let sx = c + x * R * pr, sy = c - y * R * pr;
+        if (push > 0.5) {
+          const dx = sx - g.touch[0], dy = sy - g.touch[1], d = Math.sqrt(dx * dx + dy * dy);
+          if (d < reach && d > 0.5) { const k = 1 - d / reach, m = push * k * k * Math.max(0, z + 0.3); sx += dx / d * m; sy += dy / d * m; }
+        }
+        X[i] = sx; Y[i] = sy; Z[i] = z; S[i] = P[o + 4];
+        H[i] = Math.floor(((0.42 + P[o + 3] * 0.33 + shift) % 1) * HUES) % HUES;
+        order[i] = i;
+      }
+      order.sort((a, b) => Z[a] - Z[b]);                     // back to front
+      for (let j = 0; j < n; j++) {
+        const i = order[j], depth = (Z[i] + 1) / 2, side = dot * S[i] * (0.5 + depth * 0.8);
+        ctx.globalAlpha = 0.05 + depth * depth * 0.95;       // the back half fades to a haze
+        ctx.drawImage(sprites[H[i]], X[i] - side / 2, Y[i] - side / 2, side, side);
+      }
+      ctx.globalAlpha = 1;
+      g.raf = requestAnimationFrame(frame);
+    };
+    const wake = () => { if (!g.raf && g.on && !document.hidden) g.raf = requestAnimationFrame(frame); };
+    this.onVis = wake;
+    document.addEventListener('visibilitychange', wake);
+    g.raf = requestAnimationFrame(frame);
+  }
+  componentDidMount() {
+    this.startGlobe();
+    // The tour moves on by itself until someone picks a feature.
+    this.timer = setInterval(() => {
+      if (!this.state.manual) this.setState((st) => ({ tour: ((st.tour || 0) + 1) % 6 }));
+    }, 7000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    if (this.g) { cancelAnimationFrame(this.g.raf); if (this.g.io) this.g.io.disconnect(); }
+    document.removeEventListener('visibilitychange', this.onVis);
+  }
+  tour() {
+    const list = [
+      { id: 'now', title: 'Now', text: 'Your matches with the channel already found, and the stats once you’ve watched.', device: 'iPhone' },
+      { id: 'sports', title: 'Sports', text: 'Live scores at a glance, and every channel showing a match, best picture first.', device: 'iPhone' },
+      { id: 'live', title: 'Live TV', text: 'Every channel with what’s on now and next, made for the Siri Remote.', device: 'Apple TV' },
+      { id: 'multi', title: 'Multiview', text: 'Up to four channels at once. Two are free; three and four come with Plus.', device: 'iPad' },
+      { id: 'fix', title: 'Fix It', text: 'What went wrong in plain English, and the fix, one tap away.', device: 'iPhone' },
+      { id: 'tv', title: 'Apple TV setup', text: 'Type a code on your iPhone and your TV is ready, providers and all.', device: 'Apple TV' }
+    ];
+    const i = this.state.tour || 0, auto = !this.state.manual;
+    const tabs = list.map((t, k) => ({ ...t, selected: k === i, showProgress: k === i && auto,
+      cls: k === i ? 'tour-tab on' : 'tour-tab', pick: () => this.setState({ tour: k, manual: true }) }));
+    const show = {}; list.forEach((t, k) => { show[t.id] = k === i; });
+    return { tabs, show, current: list[i] };
+  }
+  renderVals() {
+    const tour = this.tour();
+    return {
+      tabs: tour.tabs, show: tour.show, current: tour.current,
+      stats: [
+        { label: 'Possession', home: '58%', away: '42%', h: 58, a: 42, d: 1.0 },
+        { label: 'Shots', home: '11', away: '6', h: 11, a: 6, d: 1.2 },
+        { label: 'On target', home: '5', away: '2', h: 5, a: 2, d: 1.4 }
+      ],
+      ticker: ['Harbour 2–1 Meridian', 'Coastal 0–0 Rivers', 'Northgate 1–3 Eastport', 'Kickoff 19:45 Westfield v Summit',
+               'Harbour 2–1 Meridian', 'Coastal 0–0 Rivers', 'Northgate 1–3 Eastport', 'Kickoff 19:45 Westfield v Summit'],
+      fixtures: [
+        { when: "LIVE 63'", color: '#FF4945', name: 'Harbour FC v Meridian United', comp: 'PREMIER LEAGUE', d: 0.3 },
+        { when: '19:45', color: '#FBD509', name: 'Westfield v Summit', comp: 'CHAMPIONSHIP', d: 0.5 },
+        { when: '20:00', color: '#FBD509', name: 'Rafael Jodar v Alexander Zverev', comp: 'ATP FINALS', d: 0.7 }
+      ],
+      sources: [
+        { name: 'NorthSport 1', badge: '1080p', best: true },
+        { name: 'Meridian Sport', badge: '720p', best: false },
+        { name: 'Event 03', badge: 'HLS', best: false }
+      ],
+      tiles: [
+        { name: 'NorthSport 1', c1: '#1d4d34', c2: '#2a6f8f', d: 0.1, plus: false },
+        { name: 'Meridian Sport', c1: '#4b2a6b', c2: '#7a2f5c', d: 0.7, plus: false },
+        { name: 'Harbour Sport', c1: '#1f3b6d', c2: '#2c6a5c', d: 1.3, plus: true },
+        { name: 'Astra News', c1: '#5c4a12', c2: '#6b2a2a', d: 1.9, plus: true }
+      ],
+      checks: [
+        { label: 'Your internet', result: 'OK', color: '#52CD86', icon: 'M20 6 9 17l-5-5', d: 0.6 },
+        { label: 'Provider’s server', result: '182 ms', color: '#52CD86', icon: 'M20 6 9 17l-5-5', d: 1.2 },
+        { label: 'Your login', result: 'OK', color: '#52CD86', icon: 'M20 6 9 17l-5-5', d: 1.8 },
+        { label: 'This stream', result: 'Format', color: '#FF4945', icon: 'M18 6 6 18M6 6l12 12', d: 2.6 }
+      ],
+      code: ['4', '8', '2', '7', '1', '9'].map((v, k) => ({ v, d: (0.5 + k * 0.35).toFixed(2) })),
+      channels: [
+        { initials: 'N1', name: 'NorthSport 1', now: 'Live Football: Harbour FC v Meridian United', badge: '1080p', p: 62, color: '#52CD86' },
+        { initials: 'MS', name: 'Meridian Sport', now: 'Live: Harbour v Meridian', badge: '720p', p: 40, color: '#F767C1' },
+        { initials: 'HS', name: 'Harbour Sport', now: 'Coastal Cup Review', badge: '4K', p: 75, color: '#3E98FF' },
+        { initials: 'AN', name: 'Astra News', now: 'The Evening Briefing', badge: 'HLS', p: 30, color: '#FBD509' }
+      ],
+      sports: [
+        { title: 'Your matches', text: 'Live now and starting soon, your teams first, with the channel already found.' },
+        { title: 'Where to watch', text: 'Every channel showing a match, from your guide, best picture first.' },
+        { title: 'Live scores', text: 'A calm ticker on Sports, and stats for the match you just watched on Now.' },
+        { title: 'Kickoff alerts', text: 'A reminder before your team plays, with the channel to tap.' }
+      ],
+      features: [
+        { mark: 'XT', title: 'Your provider, as it comes', text: 'Xtream, M3U playlists and MAG portals. Paste your provider’s message and Amaviro fills it in.', color: '#3E98FF', tint: 'rgba(62,152,255,.14)' },
+        { mark: 'FX', title: 'Fix It', text: 'What went wrong in plain English, who can fix it, and one-tap fixes.', color: '#FF4945', tint: 'rgba(255,73,69,.14)' },
+        { mark: '⇄', title: 'Plays the awkward streams', text: 'Apple’s player first, a compatibility player for the rest, chosen for each channel.', color: '#52CD86', tint: 'rgba(82,205,134,.14)' },
+        { mark: '2×2', title: 'Multiview', text: 'Up to four channels at once on iPad, Mac and Apple TV.', color: '#A26CE5', tint: 'rgba(162,108,229,.14)' },
+        { mark: 'FM', title: 'Family', text: 'Share subscriptions with your household, fix their problems from your phone, set limits for children.', color: '#F767C1', tint: 'rgba(247,103,193,.14)' },
+        { mark: 'ms', title: 'Server health', text: 'Is your provider answering, and how fast, on Now and in widgets.', color: '#FBD509', tint: 'rgba(251,213,9,.14)' },
+        { mark: 'SR', title: 'Search that forgives', text: '“spiderman” finds Spider-Man, across channels, the guide, films and series.', color: '#3E98FF', tint: 'rgba(62,152,255,.14)' },
+        { mark: 'TV', title: 'Apple TV in a minute', text: 'Set it up from your iPhone. iCloud keeps your devices in step.', color: '#52CD86', tint: 'rgba(82,205,134,.14)' }
+      ],
+      faq: [
+        { q: 'Does Amaviro come with channels?', a: 'No. Amaviro is a player. You add the subscription you already have from your TV provider: an Xtream login, an M3U playlist or a MAG portal.' },
+        { q: 'Which devices does it work on?', a: 'iPhone, iPad, Mac (Apple silicon) and Apple TV. Set up Apple TV from your iPhone in about a minute.' },
+        { q: 'Is it free?', a: 'Watching is free: Live TV, the guide, films, series, sports and search. Amaviro Plus adds Fix It, more providers, Multiview with four screens, Family and more.' },
+        { q: 'Where are my logins kept?', a: 'On your devices, in the Keychain. If you turn on iCloud sync, they go through iCloud Keychain, encrypted end to end. Amaviro has no servers that see them.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

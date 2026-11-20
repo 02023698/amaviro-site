@@ -1,0 +1,18 @@
+{
+  "domain": "amaviro.app",
+  "publisher": "Amaviro",
+  "supportEmail": null,
+  "responseTime": "2 working days",
+  "testflightURL": null,
+  "appStoreURL": null,
+  "privacyUpdated": "20 November 2026",
+  "latestBeta": {
+    "number": 4,
+    "items": [
+      "Lighter on battery: Now looks for match channels only while it's on screen.",
+      "Saved subtitles load in the background, so films start as quickly as before.",
+      "Apple TV: choose another subtitle language with the remote."
+    ]
+  },
+  "description": "Amaviro is a TV player for iPhone, iPad, Mac and Apple TV. Bring your own subscription: it finds the match, keeps watching when something breaks, and keeps your logins private."
+}

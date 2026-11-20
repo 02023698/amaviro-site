@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amaviro.app/sitemap.xml
