@@ -16,7 +16,7 @@
 body{margin:0;background:#080B08}
 a{color:#EDEBE5}a:hover{color:#FFFFFF}
 .lbl{font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#979D97}
-.card{background:#0E130F;border:1px solid #2C322D}
+.card{background:#0E130F;border:1px solid transparent;border-radius:16px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:10px;font-weight:600;font-size:16px;text-decoration:none}
 .btn-primary{background:#EDEBE5;color:#080B08}.btn-primary:hover{background:#FFFFFF;color:#080B08}
 .btn-outline{border:1px solid #2C322D;color:#EDEBE5}.btn-outline:hover{border-color:#979D97;color:#FFFFFF}
@@ -146,19 +146,25 @@ a{color:#EDEBE5}a:hover{color:#FFFFFF}
                 <span style="font-size:11px;color:#979D97">Main Line</span>
                 <span style="font-family:'Geist Mono',monospace;font-size:11px">182 ms</span>
               </div>
-              <div class="lbl" style="font-size:9px;color:#52CD86;padding-top:6px">Your matches</div>
-              <div class="card" style="padding:12px;display:flex;flex-direction:column;gap:7px;animation:t-rise .5s ease .2s both">
-                <div style="display:flex;align-items:center;gap:8px">
+              <div class="card" style="padding:12px;display:flex;flex-direction:column;gap:9px;animation:t-rise .5s ease .2s both">
+                <div style="display:flex;align-items:center;gap:7px">
                   <span style="font-family:'Geist Mono',monospace;font-size:9px;font-weight:600;background:#FF4945;color:#080B08;padding:2px 5px">LIVE 63'</span>
-                  <span style="position:relative;display:inline-block;width:44px;height:16px;font-family:'Geist Mono',monospace;font-size:13px;font-weight:600">
-                    <span style="position:absolute;left:0;top:0;animation:t-hide .25s ease 2.4s forwards">1 – 1</span>
-                    <span style="position:absolute;left:0;top:0;opacity:0;animation:t-show .3s ease 2.5s forwards">2 – 1</span>
-                  </span>
-                  <span style="font-family:'Geist Mono',monospace;font-size:9px;font-weight:600;color:#080B08;background:#52CD86;padding:2px 5px;opacity:0;animation:t-flash 2.4s ease 2.5s both">GOAL</span>
+                  <span style="font-family:'Geist Mono',monospace;font-size:8px;letter-spacing:.1em;color:#979D97">PREMIER LEAGUE</span>
+                  <span style="font-family:'Geist Mono',monospace;font-size:9px;font-weight:600;color:#080B08;background:#52CD86;padding:2px 5px;margin-left:auto;opacity:0;animation:t-flash 2.4s ease 2.5s both">GOAL</span>
                 </div>
-                <div style="font-family:'Geist Mono',monospace;font-size:8px;letter-spacing:.1em;color:#979D97">PREMIER LEAGUE</div>
-                <div style="font-size:13px;font-weight:600">Harbour FC v Meridian United</div>
-                <div style="font-size:11px;display:flex;align-items:center;gap:6px"><span style="color:#52CD86">▶</span>NorthSport 1</div>
+                <div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:6px;text-align:center">
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:30px;height:30px;border-radius:50%;background:#FF4945;color:#080B08;display:flex;align-items:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:8px;font-weight:600">HAR</span><span style="font-size:10px;font-weight:600">Harbour FC</span></div>
+                  <span style="position:relative;display:inline-block;width:52px;height:24px;font-family:'Geist Mono',monospace;font-size:20px;font-weight:600">
+                    <span style="position:absolute;left:0;right:0;top:0;animation:t-hide .25s ease 2.4s forwards">1–1</span>
+                    <span style="position:absolute;left:0;right:0;top:0;opacity:0;animation:t-show .3s ease 2.5s forwards">2–1</span>
+                  </span>
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:30px;height:30px;border-radius:50%;background:#3E98FF;color:#080B08;display:flex;align-items:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:8px;font-weight:600">MER</span><span style="font-size:10px;font-weight:600">Meridian United</span></div>
+                </div>
+                <div style="font-size:10px;color:#979D97"><span style="color:#52CD86">▶</span> <span style="color:#EDEBE5">NorthSport 1</span> · +2 more</div>
+                <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px">
+                  <span style="text-align:center;font-size:10px;font-weight:600;background:#EDEBE5;color:#080B08;border-radius:9px;padding:7px 0">Watch Live</span>
+                  <span style="text-align:center;font-size:10px;background:rgba(237,235,229,.1);border-radius:9px;padding:7px 0">Where to Watch</span>
+                </div>
               </div>
               <div class="lbl" style="font-size:9px;color:#FF4945;padding-top:4px;animation:t-rise .5s ease .6s both">Match stats</div>
               <div class="card" style="padding:12px;display:flex;flex-direction:column;gap:8px;animation:t-rise .5s ease .8s both">
@@ -166,12 +172,19 @@ a{color:#EDEBE5}a:hover{color:#FFFFFF}
                   <div style="display:flex;flex-direction:column;gap:4px">
                     <div style="display:flex;justify-content:space-between;font-size:11px"><span style="font-family:'Geist Mono',monospace">{{s.home}}</span><span style="color:#979D97">{{s.label}}</span><span style="font-family:'Geist Mono',monospace">{{s.away}}</span></div>
                     <div style="display:flex;gap:2px;height:3px">
-                      <span style="flex:{{s.h}};background:#EDEBE5;transform-origin:left;animation:t-grow .8s ease {{s.d}}s both"></span>
-                      <span style="flex:{{s.a}};background:#2C322D"></span>
+                      <span style="flex:{{s.h}};background:#52CD86;border-radius:2px;transform-origin:left;animation:t-grow .8s ease {{s.d}}s both"></span>
+                      <span style="flex:{{s.a}};background:#3E98FF;border-radius:2px"></span>
                     </div>
                   </div>
                 </sc-for>
               </div>
+            </div>
+            <div aria-hidden="true" style="position:absolute;left:10px;right:10px;bottom:10px;height:46px;border-radius:23px;background:rgba(26,30,27,.94);display:flex;justify-content:space-around;align-items:center">
+              <span style="display:flex;flex-direction:column;align-items:center;gap:2px;color:#52CD86;font-size:8px;font-weight:600"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zM10 9l5 2.5-5 2.5zM8 21h8"></path></svg>Now</span>
+              <span style="display:flex;flex-direction:column;align-items:center;gap:2px;color:#979D97;font-size:8px;font-weight:600"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M9 20h6"></path></svg></span>
+              <span style="display:flex;flex-direction:column;align-items:center;gap:2px;color:#979D97;font-size:8px;font-weight:600"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zM8 20h8"></path></svg></span>
+              <span style="display:flex;flex-direction:column;align-items:center;gap:2px;color:#979D97;font-size:8px;font-weight:600"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"></path></svg></span>
+              <span style="display:flex;flex-direction:column;align-items:center;gap:2px;color:#979D97;font-size:8px;font-weight:600"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5a6 6 0 1 1 0 12a6 6 0 1 1 0-12zM20 20l-4.5-4.5"></path></svg></span>
             </div>
           </div>
         </sc-if>
@@ -191,12 +204,13 @@ a{color:#EDEBE5}a:hover{color:#FFFFFF}
                   </div>
                 </div>
               </div>
-              <div class="lbl" style="font-size:9px;padding-top:6px">Today</div>
+              <div class="lbl" style="font-size:9px;padding-top:6px;color:#FF4945">Live now</div>
               <sc-for list="{{fixtures}}" as="f" hint-placeholder-count="3">
                 <div class="card" style="padding:10px 12px;display:flex;flex-direction:column;gap:4px;animation:t-rise .45s ease {{f.d}}s both">
                   <span style="font-family:'Geist Mono',monospace;font-size:10px;font-weight:600;color:{{f.color}}">{{f.when}}</span>
                   <span style="font-size:12px;font-weight:600">{{f.name}}</span>
                   <span style="font-family:'Geist Mono',monospace;font-size:8px;letter-spacing:.1em;color:#979D97">{{f.comp}}</span>
+                  <span style="font-size:10px;color:#979D97"><span style="color:#52CD86">▶</span> {{f.channel}}</span>
                 </div>
               </sc-for>
             </div>
@@ -220,10 +234,13 @@ a{color:#EDEBE5}a:hover{color:#FFFFFF}
             <div aria-hidden="true" style="position:absolute;inset:0 0 auto 0;height:45%;background-image:radial-gradient(rgba(8,11,8,.5) 1px,transparent 1.4px),linear-gradient(103deg,#3E98FF,#A26CE5,#F767C1);background-size:5px 5px,100% 100%;-webkit-mask-image:linear-gradient(180deg,#000,transparent);mask-image:linear-gradient(180deg,#000,transparent)"></div>
             <div style="position:relative;height:100%;box-sizing:border-box;padding:3.5% 5%;display:flex;flex-direction:column;gap:3%;font-size:clamp(8px,1.5vw,13px)">
               <div style="display:flex;justify-content:center;gap:.6em">
-                <span style="padding:.4em 1em;border-radius:999px;background:rgba(14,19,15,.7)">Now</span>
-                <span style="padding:.4em 1em;border-radius:999px;background:rgba(14,19,15,.7)">Sports</span>
-                <span style="padding:.4em 1em;border-radius:999px;background:#EDEBE5;color:#080B08;font-weight:600">Live TV</span>
-                <span style="padding:.4em 1em;border-radius:999px;background:rgba(14,19,15,.7)">Watch</span>
+                <span style="display:flex;gap:.2em;padding:.3em;border-radius:999px;background:rgba(14,19,15,.6)">
+                <span style="padding:.4em .8em;border-radius:999px;display:flex;align-items:center"><svg width="1.3em" height="1.3em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zM10 9l5 2.5-5 2.5zM8 21h8"></path></svg></span>
+                <span style="padding:.4em .8em;border-radius:999px;display:flex;align-items:center"><svg width="1.3em" height="1.3em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M9 20h6"></path></svg></span>
+                <span style="padding:.4em 1em;border-radius:999px;background:#EDEBE5;color:#080B08;font-weight:600;display:flex;align-items:center;gap:.4em"><svg width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zM8 20h8"></path></svg>Live TV</span>
+                <span style="padding:.4em .8em;border-radius:999px;display:flex;align-items:center"><svg width="1.3em" height="1.3em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"></path></svg></span>
+                <span style="padding:.4em .8em;border-radius:999px;display:flex;align-items:center"><svg width="1.3em" height="1.3em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5a6 6 0 1 1 0 12a6 6 0 1 1 0-12zM20 20l-4.5-4.5"></path></svg></span>
+                </span>
               </div>
               <div style="display:flex;gap:.6em;font-size:.9em">
                 <span style="padding:.35em .9em;border-radius:999px;background:#52CD86;color:#080B08;font-weight:600">All</span>
@@ -253,11 +270,12 @@ a{color:#EDEBE5}a:hover{color:#FFFFFF}
           <div style="width:100%;max-width:600px;aspect-ratio:4/3;box-sizing:border-box;border:12px solid #1A1E1B;border-radius:24px;background:#080B08;overflow:hidden;position:relative">
             <div style="height:100%;box-sizing:border-box;padding:2%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:2%">
               <sc-for list="{{tiles}}" as="m" hint-placeholder-count="4">
-                <div style="position:relative;border-radius:6px;overflow:hidden;background-image:linear-gradient(120deg,{{m.c1}},{{m.c2}},{{m.c1}});background-size:300% 300%;animation:t-pop .5s ease {{m.d}}s both,t-shimmer 5s ease-in-out {{m.d}}s infinite alternate">
+                <div style="position:relative;border-radius:12px;overflow:hidden;box-shadow:inset 0 0 0 {{m.ring}}px #52CD86;background-image:linear-gradient(120deg,{{m.c1}},{{m.c2}},{{m.c1}});background-size:300% 300%;animation:t-pop .5s ease {{m.d}}s both,t-shimmer 5s ease-in-out {{m.d}}s infinite alternate">
                   <span style="position:absolute;left:6%;bottom:8%;display:flex;align-items:center;gap:6px;font-size:clamp(9px,1.3vw,12px)">
                     <span style="font-family:'Geist Mono',monospace;font-size:.8em;font-weight:600;background:#FF4945;color:#080B08;padding:1px 4px">LIVE</span>
                     <span style="font-weight:600;text-shadow:0 1px 6px rgba(0,0,0,.6)">{{m.name}}</span>
                   </span>
+                  <sc-if value="{{m.sound}}" hint-placeholder-val="{{false}}"><span style="position:absolute;left:6%;top:8%;font-size:clamp(8px,1vw,11px);font-weight:600;background:#52CD86;color:#080B08;padding:2px 8px;border-radius:999px">Sound</span></sc-if>
                   <sc-if value="{{m.plus}}" hint-placeholder-val="{{false}}"><span style="position:absolute;right:6%;top:8%;font-family:'Geist Mono',monospace;font-size:clamp(8px,1vw,10px);font-weight:600;background:#EDEBE5;color:#080B08;padding:1px 4px">PLUS</span></sc-if>
                 </div>
               </sc-for>
@@ -611,9 +629,9 @@ class Component extends DCLogic {
       ticker: ['Harbour 2–1 Meridian', 'Coastal 0–0 Rivers', 'Northgate 1–3 Eastport', 'Kickoff 19:45 Westfield v Summit',
                'Harbour 2–1 Meridian', 'Coastal 0–0 Rivers', 'Northgate 1–3 Eastport', 'Kickoff 19:45 Westfield v Summit'],
       fixtures: [
-        { when: "LIVE 63'", color: '#FF4945', name: 'Harbour FC v Meridian United', comp: 'PREMIER LEAGUE', d: 0.3 },
-        { when: '19:45', color: '#FBD509', name: 'Westfield v Summit', comp: 'CHAMPIONSHIP', d: 0.5 },
-        { when: '20:00', color: '#FBD509', name: 'Rafael Jodar v Alexander Zverev', comp: 'ATP FINALS', d: 0.7 }
+        { when: "LIVE 63'", color: '#FF4945', name: 'Harbour FC v Meridian United', comp: 'PREMIER LEAGUE', channel: 'NorthSport 1', d: 0.3 },
+        { when: "LIVE 12'", color: '#FF4945', name: 'Westfield v Summit', comp: 'CHAMPIONSHIP', channel: 'Meridian Sport', d: 0.5 },
+        { when: 'LIVE 1ST SET', color: '#FF4945', name: 'Rafael Jodar v Alexander Zverev', comp: 'ATP FINALS', channel: 'Harbour Sport', d: 0.7 }
       ],
       sources: [
         { name: 'NorthSport 1', badge: '1080p', best: true },
@@ -621,10 +639,10 @@ class Component extends DCLogic {
         { name: 'Event 03', badge: 'HLS', best: false }
       ],
       tiles: [
-        { name: 'NorthSport 1', c1: '#1d4d34', c2: '#2a6f8f', d: 0.1, plus: false },
-        { name: 'Meridian Sport', c1: '#4b2a6b', c2: '#7a2f5c', d: 0.7, plus: false },
-        { name: 'Harbour Sport', c1: '#1f3b6d', c2: '#2c6a5c', d: 1.3, plus: true },
-        { name: 'Astra News', c1: '#5c4a12', c2: '#6b2a2a', d: 1.9, plus: true }
+        { name: 'NorthSport 1', c1: '#1d4d34', c2: '#2a6f8f', d: 0.1, plus: false, sound: true, ring: 3 },
+        { name: 'Meridian Sport', c1: '#4b2a6b', c2: '#7a2f5c', d: 0.7, plus: false, sound: false, ring: 0 },
+        { name: 'Harbour Sport', c1: '#1f3b6d', c2: '#2c6a5c', d: 1.3, plus: true, sound: false, ring: 0 },
+        { name: 'Astra News', c1: '#5c4a12', c2: '#6b2a2a', d: 1.9, plus: true, sound: false, ring: 0 }
       ],
       checks: [
         { label: 'Your internet', result: 'OK', color: '#52CD86', icon: 'M20 6 9 17l-5-5', d: 0.6 },

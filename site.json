@@ -7,11 +7,11 @@
   "appStoreURL": null,
   "privacyUpdated": "20 November 2026",
   "latestBeta": {
-    "number": 5,
+    "number": 6,
     "items": [
-      "Join the Discord, right from Settings, About Amaviro.",
-      "Contact Support emails support@amaviro.app, with your beta number and device filled in.",
-      "The website, Privacy Policy and Terms now say who publishes Amaviro and how to get in touch."
+      "A new look on Apple TV: your top match big on Now, icons in the tab bar, and full-screen Your Sports and category pages.",
+      "Sports rows show the channel found for live matches and those starting soon, in your language.",
+      "Back Up Now shows the spinning globe while it works, then Backed Up."
     ]
   },
   "description": "Find the match. Fix the stream. Keep watching. Amaviro is a TV player for iPhone, iPad, Mac and Apple TV that finds the channel showing your game and sorts out what goes wrong, on the TV service you already pay for.",
