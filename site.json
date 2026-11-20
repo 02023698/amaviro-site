@@ -7,11 +7,11 @@
   "appStoreURL": null,
   "privacyUpdated": "20 November 2026",
   "latestBeta": {
-    "number": 4,
+    "number": 5,
     "items": [
-      "Lighter on battery: Now looks for match channels only while it's on screen.",
-      "Saved subtitles load in the background, so films start as quickly as before.",
-      "Apple TV: choose another subtitle language with the remote."
+      "Join the Discord, right from Settings, About Amaviro.",
+      "Contact Support emails support@amaviro.app, with your beta number and device filled in.",
+      "The website, Privacy Policy and Terms now say who publishes Amaviro and how to get in touch."
     ]
   },
   "description": "Find the match. Fix the stream. Keep watching. Amaviro is a TV player for iPhone, iPad, Mac and Apple TV that finds the channel showing your game and sorts out what goes wrong, on the TV service you already pay for.",
