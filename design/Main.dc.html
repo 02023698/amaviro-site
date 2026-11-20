@@ -72,6 +72,8 @@ a{color:#EDEBE5}a:hover{color:#FFFFFF}
 .globe{position:relative;width:420px;max-width:100%;aspect-ratio:1/1;cursor:grab;touch-action:pan-y;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
 .globe.drag{cursor:grabbing}
 .globe canvas{display:block;width:100%;height:100%}
+/* Phones: a lighter card, and the three tiles as full-width rows ("0  adverts") instead of three cramped columns. */
+@media (max-width:600px){.privacy-card{padding:24px !important;gap:24px !important}.privacy-card h2{font-size:32px !important}.privacy-tiles{grid-template-columns:1fr !important;gap:8px !important}.privacy-tiles>div{flex-direction:row !important;align-items:baseline;gap:14px !important;padding:14px 18px !important}}
 </style>
 </helmet>
 <div style="font-family:'TASA Orbiter',system-ui,sans-serif;color:#EDEBE5;background:#080B08;min-height:100%;position:relative;overflow-x:clip">
@@ -359,14 +361,14 @@ a{color:#EDEBE5}a:hover{color:#FFFFFF}
 
   <!-- Privacy -->
   <section style="max-width:1200px;margin:0 auto;padding:30px 24px 90px">
-    <div class="card" style="padding:48px;display:flex;flex-wrap:wrap;gap:40px;align-items:center">
+    <div class="card privacy-card" style="padding:48px;display:flex;flex-wrap:wrap;gap:40px;align-items:center">
       <div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:16px">
         <span class="lbl">Privacy</span>
         <h2 style="margin:0;font-size:40px;line-height:1.1;letter-spacing:-.02em;font-weight:700">No accounts. No adverts. No analytics.</h2>
         <p style="margin:0;font-size:17px;line-height:1.55;color:#979D97">Your provider logins stay on your devices, in the Keychain. Sync between your own devices goes through iCloud Keychain, encrypted end to end. Nobody at Amaviro can see what you watch.</p>
         <a href="Legal.dc.html" style="font-size:16px;color:#EDEBE5">Read the privacy policy</a>
       </div>
-      <div style="flex:1 1 360px;min-width:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px">
+      <div class="privacy-tiles" style="flex:1 1 360px;min-width:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px">
         <div style="border:1px solid #2C322D;padding:20px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'Geist Mono',monospace;font-size:30px;font-weight:600">0</span><span style="font-size:13px;color:#979D97">accounts to make</span></div>
         <div style="border:1px solid #2C322D;padding:20px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'Geist Mono',monospace;font-size:30px;font-weight:600">0</span><span style="font-size:13px;color:#979D97">adverts</span></div>
         <div style="border:1px solid #2C322D;padding:20px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'Geist Mono',monospace;font-size:30px;font-weight:600">0</span><span style="font-size:13px;color:#979D97">trackers</span></div>
