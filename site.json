@@ -1,9 +1,9 @@
 {
   "domain": "amaviro.app",
   "publisher": "Amaviro",
-  "supportEmail": null,
+  "supportEmail": "support@amaviro.app",
   "responseTime": "2 working days",
-  "testflightURL": null,
+  "testflightURL": "https://testflight.apple.com/join/N3fmKE4F",
   "appStoreURL": null,
   "privacyUpdated": "20 November 2026",
   "latestBeta": {
