@@ -130,37 +130,37 @@ a{color:#EDEBE5}a:hover{color:#FFFFFF}
     <div style="display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start">
       <div class="tour-tabs" role="tablist" aria-label="Features" style="flex:1 1 300px;max-width:100%;min-width:0;display:flex;flex-direction:column;gap:6px">
         
-          <button class="tour-tab on" role="tab" aria-selected="true" data-tab="now" type="button">
+          <button class="tour-tab on" role="tab" aria-selected="true" data-tab="now" data-device="iPhone" type="button">
             <span class="tour-progress" aria-hidden="true"></span>
             <span class="tt">Now</span>
             <span class="td">Your matches with the channel already found, and the stats once you’ve watched.</span>
           </button>
         
-          <button class="tour-tab" role="tab" aria-selected="false" data-tab="sports" type="button">
+          <button class="tour-tab" role="tab" aria-selected="false" data-tab="sports" data-device="iPhone" type="button">
             <span class="tour-progress" aria-hidden="true"></span>
             <span class="tt">Sports</span>
             <span class="td">Live scores at a glance, and every channel showing a match, best picture first.</span>
           </button>
         
-          <button class="tour-tab" role="tab" aria-selected="false" data-tab="live" type="button">
+          <button class="tour-tab" role="tab" aria-selected="false" data-tab="live" data-device="Apple TV" type="button">
             <span class="tour-progress" aria-hidden="true"></span>
             <span class="tt">Live TV</span>
             <span class="td">Every channel with what’s on now and next, made for the Siri Remote.</span>
           </button>
         
-          <button class="tour-tab" role="tab" aria-selected="false" data-tab="multi" type="button">
+          <button class="tour-tab" role="tab" aria-selected="false" data-tab="multi" data-device="iPad" type="button">
             <span class="tour-progress" aria-hidden="true"></span>
             <span class="tt">Multiview</span>
             <span class="td">Up to four channels at once. Two are free; three and four come with Plus.</span>
           </button>
         
-          <button class="tour-tab" role="tab" aria-selected="false" data-tab="fix" type="button">
+          <button class="tour-tab" role="tab" aria-selected="false" data-tab="fix" data-device="iPhone" type="button">
             <span class="tour-progress" aria-hidden="true"></span>
             <span class="tt">Fix It</span>
             <span class="td">What went wrong in plain English, and the fix, one tap away.</span>
           </button>
         
-          <button class="tour-tab" role="tab" aria-selected="false" data-tab="tv" type="button">
+          <button class="tour-tab" role="tab" aria-selected="false" data-tab="tv" data-device="Apple TV" type="button">
             <span class="tour-progress" aria-hidden="true"></span>
             <span class="tt">Apple TV setup</span>
             <span class="td">Type a code on your iPhone and your TV is ready, providers and all.</span>
@@ -389,7 +389,7 @@ a{color:#EDEBE5}a:hover{color:#FFFFFF}
         <!-- Multiview on iPad: screens arrive one by one -->
         <div class="tour-panel" data-panel="multi" hidden>
           <div style="width:100%;max-width:600px;aspect-ratio:4/3;box-sizing:border-box;border:12px solid #1A1E1B;border-radius:24px;background:#080B08;overflow:hidden;position:relative">
-            <div style="height:100%;box-sizing:border-box;padding:2%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:2%">
+            <div style="position:absolute;inset:clamp(6px,1.6vw,12px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:clamp(6px,1.6vw,12px)">
               
                 <div style="position:relative;border-radius:12px;overflow:hidden;box-shadow:inset 0 0 0 3px #52CD86;background-image:linear-gradient(120deg,#1d4d34,#2a6f8f,#1d4d34);background-size:300% 300%;animation:t-pop .5s ease 0.1s both,t-shimmer 5s ease-in-out 0.1s infinite alternate">
                   <span style="position:absolute;left:6%;bottom:8%;display:flex;align-items:center;gap:6px;font-size:clamp(9px,1.3vw,12px)">
@@ -732,11 +732,16 @@ a{color:#EDEBE5}a:hover{color:#FFFFFF}
 (() => {
   const root = document.querySelector('.tour'); if (!root) return;
   const tabs = [...root.querySelectorAll('.tour-tab')], panels = [...root.querySelectorAll('.tour-panel')];
+  // The line and device under the picture follow the feature shown (they stayed on the first one's).
+  const caption = root.querySelector('.tour-caption'), device = caption && caption.nextElementSibling;
   let i = Math.max(0, tabs.findIndex(t => t.classList.contains('on'))), manual = false;
   function show(k) {
     i = k;
     tabs.forEach((t, n) => { t.classList.toggle('on', n === k); t.setAttribute('aria-selected', String(n === k)); });
     panels.forEach(p => { p.hidden = p.dataset.panel !== tabs[k].dataset.tab; });
+    const td = tabs[k].querySelector('.td');
+    if (caption && td) caption.textContent = td.textContent;
+    if (device && tabs[k].dataset.device) device.textContent = tabs[k].dataset.device;
     const bar = tabs[k].querySelector('.tour-progress');
     if (bar) { bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; }
   }

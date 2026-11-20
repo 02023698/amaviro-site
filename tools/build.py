@@ -104,11 +104,16 @@ TOUR_JS = """<script>
 (() => {
   const root = document.querySelector('.tour'); if (!root) return;
   const tabs = [...root.querySelectorAll('.tour-tab')], panels = [...root.querySelectorAll('.tour-panel')];
+  // The line and device under the picture follow the feature shown (they stayed on the first one's).
+  const caption = root.querySelector('.tour-caption'), device = caption && caption.nextElementSibling;
   let i = Math.max(0, tabs.findIndex(t => t.classList.contains('on'))), manual = false;
   function show(k) {
     i = k;
     tabs.forEach((t, n) => { t.classList.toggle('on', n === k); t.setAttribute('aria-selected', String(n === k)); });
     panels.forEach(p => { p.hidden = p.dataset.panel !== tabs[k].dataset.tab; });
+    const td = tabs[k].querySelector('.td');
+    if (caption && td) caption.textContent = td.textContent;
+    if (device && tabs[k].dataset.device) device.textContent = tabs[k].dataset.device;
     const bar = tabs[k].querySelector('.tour-progress');
     if (bar) { bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; }
   }
@@ -235,7 +240,7 @@ def build(design, address):
     title = re.search(r"<title>(.*?)</title>", src, re.S).group(1).strip()
     helmet = re.search(r"<helmet>(.*?)</helmet>", src, re.S).group(1)
     body = re.search(r"</helmet>(.*?)</x-dc>", src, re.S).group(1)
-    body = body.replace('onClick="{{t.pick}}"', 'data-tab="{{t.id}}" type="button"')
+    body = body.replace('onClick="{{t.pick}}"', 'data-tab="{{t.id}}" data-device="{{t.device}}" type="button"')
     tour_current = (data.get("current") or {}).get("id")
     page = render(body, data, tour_current)
     script = ""
