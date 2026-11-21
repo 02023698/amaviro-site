@@ -7,11 +7,11 @@
   "appStoreURL": null,
   "privacyUpdated": "20 November 2026",
   "latestBeta": {
-    "number": 8,
+    "number": 9,
     "items": [
-      "No black flash when switching tabs on iPhone and iPad: the colour band stays and only the page fades in.",
-      "Now shows Watch Live only once a channel is found; until then, Where to Watch.",
-      "Suggested backup TV guides now list the best for live sport first."
+      "Sports uses your country as well as your language: a UK viewer gets UK channels for a match, never US ones.",
+      "New Language and Country setting in Playback.",
+      "Live TV shows a green 4K tag only on channels that really are 4K; the 1080p, 720p and SD labels are gone."
     ]
   },
   "description": "Find the match. Fix the stream. Keep watching. Amaviro is a TV player for iPhone, iPad, Mac and Apple TV that finds the channel showing your game and sorts out what goes wrong, on the TV service you already pay for.",
