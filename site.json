@@ -7,11 +7,11 @@
   "appStoreURL": null,
   "privacyUpdated": "21 November 2026",
   "latestBeta": {
-    "number": 13,
+    "number": 14,
     "items": [
-      "Full Check, rebuilt: it moves you off a server that isn't answering, finds the real cause and shows what it saw, with a report to send your provider.",
-      "Now puts your country's competitions first, and Watch Live goes to your country's broadcaster.",
-      "On the match page, the stats sit under the score and long feed lists fold up."
+      "Filter Sports by league, and your team's match is Now's main card on matchday.",
+      "Channels with sound but no picture switch to the compatibility player by themselves.",
+      "Faster: Now and Sports open with matches straight away, and the app does less on mobile data."
     ]
   },
   "description": "Find the match. Fix the stream. Keep watching. Amaviro is a TV player for iPhone, iPad, Mac and Apple TV that finds the channel showing your game and sorts out what goes wrong, on the TV service you already pay for.",
