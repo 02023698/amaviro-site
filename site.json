@@ -7,11 +7,11 @@
   "appStoreURL": null,
   "privacyUpdated": "21 November 2026",
   "latestBeta": {
-    "number": 10,
+    "number": 11,
     "items": [
-      "With Plus in the UK, two recommended TV guides are added by default so a match's Sky Sports or TNT Sports channel is found. Turn them off in Settings, Playlists and Guide.",
-      "Sports falls back to your App Store country when your device's region isn't one Amaviro knows.",
-      "The privacy policy names the recommended guides' sites."
+      "With several providers, a match plays from the one on show when it has it; the others are the fallback.",
+      "Feeds from your other providers say which provider they're from.",
+      "With Plus, your other providers' channels and guides are kept up to date in the background."
     ]
   },
   "description": "Find the match. Fix the stream. Keep watching. Amaviro is a TV player for iPhone, iPad, Mac and Apple TV that finds the channel showing your game and sorts out what goes wrong, on the TV service you already pay for.",
