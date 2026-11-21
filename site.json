@@ -7,11 +7,11 @@
   "appStoreURL": null,
   "privacyUpdated": "21 November 2026",
   "latestBeta": {
-    "number": 11,
+    "number": 12,
     "items": [
-      "With several providers, a match plays from the one on show when it has it; the others are the fallback.",
-      "Feeds from your other providers say which provider they're from.",
-      "With Plus, your other providers' channels and guides are kept up to date in the background."
+      "Backup and recommended TV guides now find a match's sports channel, like TNT Sports for a Premier League game.",
+      "A sports channel whose own listings don't name the teams uses a backup guide's listings that do.",
+      "The guide reloads straight away when your backup guides change."
     ]
   },
   "description": "Find the match. Fix the stream. Keep watching. Amaviro is a TV player for iPhone, iPad, Mac and Apple TV that finds the channel showing your game and sorts out what goes wrong, on the TV service you already pay for.",
