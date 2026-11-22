@@ -7,11 +7,11 @@
   "appStoreURL": null,
   "privacyUpdated": "21 November 2026",
   "latestBeta": {
-    "number": 17,
+    "number": 18,
     "items": [
-      "Switching tabs stays smooth while matches load, on every device.",
-      "A backup server address added on one device now appears on your others through iCloud.",
-      "Family: organisers can delete a family, and failed changes now say why instead of looking saved."
+      "New Server Health widgets: every server address, response times, uptime and what to do, on the Home Screen and Lock Screen.",
+      "New Family widgets: everyone's devices, the subscriptions they use, and what needs you.",
+      "Tap a widget to open Full Check or the Family page."
     ]
   },
   "description": "Find the match. Fix the stream. Keep watching. Amaviro is a TV player for iPhone, iPad, Mac and Apple TV that finds the channel showing your game and sorts out what goes wrong, on the TV service you already pay for.",
