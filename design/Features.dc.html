@@ -116,34 +116,37 @@ class Component extends DCLogic {
     return {
       groups: [
         { id: 'watching', label: 'Watching', color: '#3E98FF', title: 'Your channels, tidy and quick.', items: [
-          { title: 'Live TV with what’s on', text: 'Every channel with now and next from the guide, grouped the way your provider sends them, without the clutter in their names.', devices: all },
+          { title: 'Live TV with what’s on', text: 'Every channel with now and next from the guide, your country’s categories first, without the clutter in their names. On Apple TV, each row runs the width of the screen.', devices: all },
+          { title: 'Mini guide while you watch', text: 'Press down on the remote: the channels around the one playing, with what’s on now and next. Switch without leaving the picture.', devices: ['Apple TV'] },
           { title: 'Films and series', text: 'Posters, filters by genre, year and rating, and Continue Watching that picks up where you stopped.', devices: all },
           { title: 'Search that forgives', text: 'Channels, the TV guide, films and series at once, or one at a time. “spiderman” finds Spider-Man.', devices: all },
           { title: 'Favourites and Recently Watched', text: 'On Now, one press away, and the same on all your devices through iCloud.', devices: all }
         ] },
         { id: 'sports', label: 'Sports', color: '#52CD86', title: 'Every match, and the channel showing it.', items: [
-          { title: 'Your matches', text: 'Live and starting soon, your teams first, with the channel found from your guide.', devices: all },
+          { title: 'Your matches', text: 'Live and starting soon, your team’s match first on matchday, then your country’s competitions, with the channel found from your guide.', devices: all },
+          { title: 'Your country’s broadcaster', text: 'Watch Live goes to the channel showing the match where you are (Sky Sports or TNT Sports in the UK), not a feed from abroad.', devices: all },
           { title: 'Where to watch', text: 'Every channel showing a match, best picture first, so you can pick another if one stutters.', devices: all },
-          { title: 'Live scores and match stats', text: 'A calm scores ticker, and possession, shots and more for the match you just watched.', devices: all },
+          { title: 'Live scores and match stats', text: 'A calm scores ticker, a filter for each league, and possession and shots on every match card. Off in Settings if you’d rather not.', devices: all },
           { title: 'Kickoff alerts', text: 'A reminder before your team plays. Hide Scores keeps results a surprise.', devices: ['iPhone', 'iPad'] }
         ] },
         { id: 'players', label: 'Players', color: '#A26CE5', title: 'Plays the streams other players give up on.', items: [
           { title: 'Apple’s player first', text: 'Picture in Picture, AirPlay and the controls you know, for every stream it can play.', devices: all },
-          { title: 'Compatibility Player', text: 'For the formats Apple’s player can’t open, chosen by itself, and remembered for each channel.', devices: all },
+          { title: 'Compatibility Player', text: 'For the formats Apple’s player can’t open, and for sound with no picture: Amaviro notices and switches by itself, and remembers it for the channel. On Apple TV, it’s one press away under Player.', devices: all },
           { title: 'Multiview', text: 'Two screens side by side, free. Three or four with Plus.', devices: big, plus: true },
           { title: 'Audio and subtitles', text: 'Choose the language. Amaviro remembers it for the next stream that offers it.', devices: all }
         ] },
         { id: 'reliability', label: 'When things go wrong', color: '#FF4945', title: 'Calm, and clear about what to do.', items: [
-          { title: 'Fix It', text: 'What went wrong in plain English, who can fix it, one-tap fixes, and a full check of your connection, provider and streams.', devices: all, plus: true },
+          { title: 'Fix It and Full Check', text: 'What went wrong in plain English, who can fix it, one-tap fixes, and a full check that swaps a dead server for a working one and shows what it saw.', devices: all, plus: true },
           { title: 'Automatic server switching', text: 'If a server stops answering while you watch, Amaviro moves to your provider’s backup address and keeps playing.', devices: all, plus: true },
-          { title: 'Server health', text: 'Is your provider’s server answering, and how fast, at the top of Now.', devices: all },
-          { title: 'Widgets and history', text: 'Server health on your Home and Lock Screen, and two weeks of connection history.', devices: ['iPhone', 'iPad'], plus: true }
+          { title: 'Server health', text: 'Is your provider’s server answering, and how fast, at the top of Now. A channel that sends no picture says so, instead of staying blank.', devices: all },
+          { title: 'Widgets', text: 'Server Health and Family on your Home Screen and Lock Screen: every server address, response times and uptime, everyone’s devices and what needs you. They keep themselves up to date.', devices: touch, plus: true },
+          { title: 'Connection history', text: 'Two weeks of how your provider has been, with charts.', devices: all, plus: true }
         ] },
         { id: 'household', label: 'Your household', color: '#F767C1', title: 'One app for everyone at home.', items: [
-          { title: 'Family', text: 'Share subscriptions, see whose device needs help, and set limits for children. Nobody sees what anyone watches.', devices: touch, plus: true },
-          { title: 'More than one provider', text: 'Add every subscription you have and switch between them from the top of any page.', devices: all, plus: true },
-          { title: 'Apple TV in a minute', text: 'Set it up from your iPhone. Your providers, favourites and progress follow you through iCloud.', devices: all },
-          { title: 'Backup TV guide', text: 'Fill in the channels your provider’s guide leaves empty.', devices: all, plus: true }
+          { title: 'Family', text: 'Share subscriptions, see whose device needs help and fix it from your phone, and set limits for children. Nobody sees what anyone watches.', devices: touch, plus: true },
+          { title: 'More than one provider', text: 'Add every subscription you have and switch between them. If the one on show doesn’t carry a match, Amaviro finds it on another.', devices: all, plus: true },
+          { title: 'Apple TV in a minute', text: 'Set it up from your iPhone. Your providers, backup server addresses, favourites and progress follow you through iCloud.', devices: all },
+          { title: 'Backup TV guide', text: 'Fill in the channels your provider’s guide leaves empty. The right guides for your country are on from the start.', devices: all, plus: true }
         ] },
         { id: 'privacy', label: 'Privacy', color: '#FBD509', title: 'No accounts. No adverts. No analytics.', items: [
           { title: 'Logins stay with you', text: 'In the Keychain on your devices, and in iCloud Keychain, encrypted end to end, if you sync.', devices: all },
