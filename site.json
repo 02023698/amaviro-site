@@ -7,11 +7,11 @@
   "appStoreURL": null,
   "privacyUpdated": "21 November 2026",
   "latestBeta": {
-    "number": 21,
+    "number": 22,
     "items": [
-      "A short tour of Amaviro's less obvious features, with its own Apple TV version. Open it any time from About Amaviro.",
-      "A refresh button at the top of Now and Sports, with a tick when it's done. Pulling down still works.",
-      "Now's header keeps the full date and time."
+      "Radio stations like talkSPORT and BBC Radio 5 Live are no longer offered for matches.",
+      "Refreshing Now or Sports also updates your playlist, so Watch Live finds the latest event channels.",
+      "The server line on Now checks again when you come back to the app, instead of showing an old 'Not Answering'."
     ]
   },
   "description": "Find the match. Fix the stream. Keep watching. Amaviro is a TV player for iPhone, iPad, Mac and Apple TV that finds the channel showing your game and sorts out what goes wrong, on the TV service you already pay for.",
